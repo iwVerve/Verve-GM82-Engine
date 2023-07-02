@@ -13,7 +13,7 @@ exe_version=1.0.0.0
 
 has_backgrounds=1
 has_datafiles=0
-has_fonts=0
+has_fonts=1
 has_objects=1
 has_paths=0
 has_scripts=1

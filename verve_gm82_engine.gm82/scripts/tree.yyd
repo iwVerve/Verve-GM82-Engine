@@ -20,3 +20,5 @@
 	|input_check_released
 	|input_write
 	|input_read
++Utility
+	|draw_text_outlined
