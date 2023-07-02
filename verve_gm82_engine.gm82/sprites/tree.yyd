@@ -1,2 +1,13 @@
++World
++Player
+	|sprPlayerIdle
+	|sprPlayerRun
+	|sprPlayerJump
+	|sprPlayerFall
+	|sprPlayerSlide
+	|sprPlayerMask
+	|sprPlayerStart
 +Menu
 	|sprFileBackground
++Killers
+	|sprCherry

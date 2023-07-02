@@ -5,7 +5,7 @@
 
 var key;
 
-key = ds_map_get(global.input_keyboard_map, argument0);
+key = input_get_key(argument0);
 if is_undefined(key) {
     return false;
 }

@@ -1,4 +1,4 @@
-///config_save()
+///config_write()
 
 // Writes the current game options to disk.
 

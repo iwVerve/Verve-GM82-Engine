@@ -3,6 +3,7 @@
 engine_settings();
 
 directory_create(working_directory+"/data");
+save_init();
 config_init();
 input_init();
 

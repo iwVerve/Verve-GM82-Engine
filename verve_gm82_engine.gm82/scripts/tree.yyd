@@ -8,13 +8,24 @@
 +Input
 	|input_init
 	|input_define
+	|input_get_key
 	|input_check
 	|input_check_pressed
 	|input_check_released
 	|input_write
 	|input_read
-+Menu
-	|menu_draw_savefile
++Save
+	|save_init
+	|save_set
+	|save_set_persistent
+	|save_get
+	|save_save
+	|save_load
+	|save_write
+	|save_read
+	|save_default
+	|save_select
+	|save_new_game
 +Options
 	|config_init
 	|config_get
@@ -22,6 +33,10 @@
 	|config_default
 	|config_write
 	|config_read
++Menu
+	|menu_draw_savefile
+	|menu_draw_navigation
 +Utility
 	|draw_text_outlined
 	|key_get_name
+	|ternary

@@ -1,1 +1,9 @@
 sprFileBackground
+sprPlayerIdle
+sprPlayerRun
+sprPlayerJump
+sprPlayerFall
+sprPlayerSlide
+sprPlayerStart
+sprPlayerMask
+sprCherry

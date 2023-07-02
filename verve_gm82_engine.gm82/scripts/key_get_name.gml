@@ -73,5 +73,5 @@ switch(argument0) {
     case 222: return "'";
 
     // Other
-    default: return chr(key);
+    default: return chr(argument0);
 }

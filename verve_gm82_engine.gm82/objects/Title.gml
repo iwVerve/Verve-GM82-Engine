@@ -13,7 +13,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-var key;
+var key_name;
 
 draw_set_halign(fa_middle);
 draw_set_valign(fa_middle);
@@ -21,8 +21,8 @@ draw_set_font(fTitle);
 draw_text_outlined(400, 280, global.game_title, c_white, c_black, 2);
 
 draw_set_font(fTitleSmall);
-key = ds_map_get(global.input_keyboard_map, key_menu_accept)
-draw_text_outlined(400, 344, str_cat("Press -", key_get_name(key), "- to Start"), c_white, c_black, 2);
+key_name = key_get_name(input_get_key(key_menu_accept));
+draw_text_outlined(400, 344, str_cat("Press -", key_name, "- to Start"), c_white, c_black, 2);
 
 if global.debug {
     draw_set_font(fDefaultBig);
