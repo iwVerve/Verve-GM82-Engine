@@ -8,3 +8,5 @@ global.config_file = "data/config";
 config_read();
 
 config_default("fullscreen", false);
+
+config_write();

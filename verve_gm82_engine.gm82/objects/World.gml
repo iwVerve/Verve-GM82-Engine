@@ -31,3 +31,13 @@ applies_to=self
 
 // Code moved to script to allow multiple code windows open.
 event_game_start();
+#define Other_4
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+///event_room_start()
+
+// Code moved to script to allow multiple code windows open.
+event_room_start();

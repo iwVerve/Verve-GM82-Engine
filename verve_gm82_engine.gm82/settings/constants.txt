@@ -1,0 +1,17 @@
+key_left=0
+key_right=1
+key_up=2
+key_down=3
+key_jump=4
+key_shoot=5
+key_restart=6
+key_skip=7
+key_suicide=8
+key_pause=9
+key_menu_left=10
+key_menu_right=11
+key_menu_up=12
+key_menu_down=13
+key_menu_accept=14
+key_menu_back=15
+key_menu_options=16

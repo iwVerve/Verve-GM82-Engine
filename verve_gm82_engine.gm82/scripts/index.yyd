@@ -9,3 +9,10 @@ config_write
 config_read
 config_default
 input_init
+input_write
+input_read
+input_define
+input_check
+input_check_pressed
+input_check_released
+update_window_caption

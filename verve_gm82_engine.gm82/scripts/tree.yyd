@@ -1,4 +1,6 @@
 |engine_settings
++World
+	|update_window_caption
 +Events
 	|event_game_start
 	|event_room_start
@@ -12,3 +14,9 @@
 	|config_read
 +Input
 	|input_init
+	|input_define
+	|input_check
+	|input_check_pressed
+	|input_check_released
+	|input_write
+	|input_read
