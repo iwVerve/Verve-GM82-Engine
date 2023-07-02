@@ -17,3 +17,5 @@ input_check_pressed
 input_check_released
 update_window_caption
 draw_text_outlined
+key_get_name
+menu_draw_savefile
