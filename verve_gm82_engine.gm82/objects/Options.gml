@@ -33,6 +33,9 @@ volume_option_timer = 0;
 volume_option_period = 10;
 volume_option_delay = 10;
 
+sound_test_timer = 0;
+sound_test_delay = 25;
+
 // Keyboard state
 current_key = 0;
 is_rebinding = false;
@@ -73,6 +76,7 @@ if state == state_options {
         current_option = modwrap(current_option + v_input, 0, ds_list_size(options_list));
         option = ds_list_find_value(options_list, current_option);
         script_execute(option, "init");
+        sound_play("player_ground_jump");
     }
 
     option = ds_list_find_value(options_list, current_option);
@@ -86,6 +90,7 @@ else if state == state_keyboard_controls {
     if !is_rebinding {
         if v_input != 0 {
             current_key = modwrap(current_key + v_input, 0, ds_list_size(global.input_rebindable_list) + 1);
+            sound_play("player_ground_jump");
         }
 
         if input_check_pressed(key_menu_accept) {

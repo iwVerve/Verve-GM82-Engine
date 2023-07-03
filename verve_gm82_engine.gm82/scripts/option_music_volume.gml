@@ -19,7 +19,7 @@ switch(argument0) {
         if h_input != 0 {
             if volume_option_timer mod volume_option_period == 0 || volume_option_timer > volume_option_delay {
                 config_set("music_volume", clamp(config_get("music_volume") + h_input, 0, 100));
-                sound_set_music_volume(config_get("music_volume"));
+                sound_set_music_volume(config_get("music_volume") / 100);
             }
             volume_option_timer += 1;
         }

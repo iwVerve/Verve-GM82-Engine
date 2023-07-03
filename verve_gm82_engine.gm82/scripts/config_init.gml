@@ -15,4 +15,8 @@ config_default("sound_volume", 25);
 config_default("fullscreen", false);
 config_default("smoothing", false);
 
+window_set_fullscreen(config_get("fullscreen"));
+sound_set_music_volume(config_get("music_volume") / 100);
+sound_set_sound_volume(config_get("sound_volume") / 100);
+
 config_write();

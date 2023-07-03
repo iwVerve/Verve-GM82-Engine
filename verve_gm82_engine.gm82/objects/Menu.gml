@@ -32,7 +32,10 @@ h_input = input_check_pressed(key_menu_right) - input_check_pressed(key_menu_lef
 
 // Selecting a save file
 if state == state_not_selected {
-    current_file = modwrap(current_file + h_input, 0, file_count);
+    if h_input != 0 {
+        current_file = modwrap(current_file + h_input, 0, file_count);
+        sound_play("player_ground_jump");
+    }
     save_select(current_file);
 
     if input_check_pressed(key_menu_accept) {

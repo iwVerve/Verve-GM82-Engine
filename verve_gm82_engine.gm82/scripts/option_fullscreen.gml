@@ -12,6 +12,7 @@ switch(argument0) {
         if input_check_pressed(key_menu_accept) || input_check_pressed(key_menu_left) || input_check_pressed(key_menu_right) {
             config_set("fullscreen", !config_get("fullscreen"));
             window_set_fullscreen(config_get("fullscreen"));
+            sound_play("player_ground_jump");
         }
         break;
 

@@ -11,6 +11,7 @@ switch(argument0) {
 
     case "init":
         volume_option_timer = 0;
+        sound_test_timer = 0;
         break;
 
     case "step":
@@ -19,12 +20,17 @@ switch(argument0) {
         if h_input != 0 {
             if volume_option_timer mod volume_option_period == 0 || volume_option_timer > volume_option_delay {
                 config_set("sound_volume", clamp(config_get("sound_volume") + h_input, 0, 100));
-                sound_set_sound_volume(config_get("sound_volume"));
+                sound_set_sound_volume(config_get("sound_volume") / 100);
             }
             volume_option_timer += 1;
         }
         else {
             volume_option_timer = 0;
+        }
+
+        sound_test_timer += 1;
+        if sound_test_timer mod sound_test_delay == 0 {
+            sound_play("player_shoot");
         }
 
         break;

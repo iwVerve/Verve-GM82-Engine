@@ -20,7 +20,7 @@ for (i = 0; i < folders_count; i += 1) {
     sound_add_directory(folders[i], ".mp3", 3, 2);
 }
 
-folders[1] = "data\music\";
+folders[0] = "data\music\";
 folders_count = 1;
 
 for (file = file_find_first(folders[0] + "*", fa_directory); file != ""; file = file_find_next()) {

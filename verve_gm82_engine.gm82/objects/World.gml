@@ -48,3 +48,10 @@ action_id=603
 applies_to=self
 */
 global.close_button_pressed = true;
+#define Draw_0
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=605
+invert=0
+arg0=Don't draw
+*/

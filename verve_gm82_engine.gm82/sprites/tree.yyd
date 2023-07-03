@@ -1,4 +1,10 @@
 +World
+	+Controller
+		|sprWorld
+		|sprMenu
+		|sprMusic
+		|sprCamera
+		|sprKiller
 +Player
 	|sprPlayerIdle
 	|sprPlayerRun
