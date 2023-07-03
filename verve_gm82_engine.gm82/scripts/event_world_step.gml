@@ -20,3 +20,5 @@ if keyboard_check_pressed(vk_f4) {
 
     config_write();
 }
+
+render_update();

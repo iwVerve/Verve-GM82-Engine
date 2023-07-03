@@ -1,6 +1,10 @@
 |engine_settings
 +World
 	|update_window_caption
+	+Render
+		|render_init
+		|render_compose
+		|render_update
 +Events
 	|event_game_start
 	|event_room_start
@@ -39,6 +43,7 @@
 		|option_list
 		|option_music
 		|option_fullscreen
+		|option_smoothing
 +Menu
 	|menu_draw_savefile
 	|menu_draw_navigation

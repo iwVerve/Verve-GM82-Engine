@@ -78,6 +78,8 @@ applies_to=self
 /// Cleanup
 
 ds_list_destroy(options_list);
+
+config_write();
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

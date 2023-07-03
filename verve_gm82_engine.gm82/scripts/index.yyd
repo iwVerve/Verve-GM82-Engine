@@ -40,3 +40,8 @@ option_fullscreen
 
 sound_init
 
+render_compose
+render_init
+
+option_smoothing
+render_update

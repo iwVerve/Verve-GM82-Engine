@@ -49,5 +49,5 @@ if selected {
         }
         draw_sprite(sprCherry, animation_timer / 15, xx + 5 + 20 * i, yy + 310);
     }
-    draw_sprite(sprPlayerIdle, animation_timer / 5, xx + 67, yy + 312);
+    draw_sprite(sprPlayerIdle, animation_timer / 5, xx + 66, yy + 312);
 }
