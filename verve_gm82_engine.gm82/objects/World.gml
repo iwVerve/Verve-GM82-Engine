@@ -41,3 +41,10 @@ applies_to=self
 
 // Code moved to script to allow multiple code windows open.
 event_room_start();
+#define Other_30
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+global.close_button_pressed = true;

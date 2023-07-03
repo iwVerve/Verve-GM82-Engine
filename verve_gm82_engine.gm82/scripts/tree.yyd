@@ -5,6 +5,8 @@
 	|event_game_start
 	|event_room_start
 	|event_world_step
++Music
+	|sound_init
 +Input
 	|input_init
 	|input_define
@@ -33,6 +35,10 @@
 	|config_default
 	|config_write
 	|config_read
+	+Options
+		|option_list
+		|option_music
+		|option_fullscreen
 +Menu
 	|menu_draw_savefile
 	|menu_draw_navigation

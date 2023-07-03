@@ -1,6 +1,6 @@
 ///input_init()
 
-global.input_keyboard_file = "data/keyboard";
+global.input_keyboard_file = global.save_folder + "keyboard";
 
 // Stores the current keybinds.
 global.input_keyboard_map = ds_map_create();

@@ -89,6 +89,10 @@ else if state == state_overwrite {
     }
 }
 
+if input_check_pressed(key_menu_options) {
+    room_goto(rOptions);
+}
+
 animation_timer += 1;
 #define Draw_0
 /*"/*'/**//* YYD ACTION

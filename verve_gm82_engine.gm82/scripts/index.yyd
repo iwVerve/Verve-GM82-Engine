@@ -34,3 +34,9 @@ ternary
 save_new_game
 save_save
 save_load
+option_music
+option_list
+option_fullscreen
+
+sound_init
+

@@ -1,7 +1,13 @@
 ///event_world_step()
 
-if keyboard_check_pressed(vk_escape) {
-    game_end();
+if keyboard_check_pressed(vk_escape) || global.close_button_pressed {
+    if room == rTitle {
+        game_end();
+    }
+    else {
+        room_goto(rTitle);
+        global.close_button_pressed = false;
+    }
 }
 
 if keyboard_check_pressed(vk_f2) {

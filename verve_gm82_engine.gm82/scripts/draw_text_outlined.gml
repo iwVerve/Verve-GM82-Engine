@@ -1,5 +1,5 @@
 ///draw_text_outlined(x, y, string, text_color, outline_color, [outline_width=1], [detail=8])
-var i, xx, yy, str, text_color, outline_color, outline_width, detail, angle;
+var i, xx, yy, str, text_color, outline_color, outline_width, detail, angle, x_off, y_off;
 
 xx = argument[0];
 yy = argument[1];
@@ -16,6 +16,7 @@ if argument_count > 6 {
 }
 
 draw_set_color(outline_color);
+
 for(i = 0; i < detail; i += 1) {
     angle = i/detail * 360;
     draw_text(

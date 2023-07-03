@@ -3,7 +3,7 @@
 // Initializes data holding the save data.
 
 // Actual save files also include the save file index, e.g. save0.
-global.save_file = "data/save";
+global.save_file = global.save_folder + "save";
 global.save_current_file = "";
 
 // Map holding the current saveable data.
