@@ -9,6 +9,6 @@ var key, value;
 key = argument0;
 value = argument1;
 
-if is_undefined(ds_map_find_value(global.config_map, key)) {
+if is_undefined(ds_map_get(global.config_map, key)) {
     ds_map_set(global.config_map, key, value);
 }

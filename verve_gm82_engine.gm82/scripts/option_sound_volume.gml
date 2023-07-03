@@ -1,0 +1,38 @@
+///option_sound_volume(type)
+var h_input;
+
+switch(argument0) {
+
+    case "include":
+        return true;
+
+    case "in_pause":
+        return true;
+
+    case "init":
+        volume_option_timer = 0;
+        break;
+
+    case "step":
+        h_input = input_check(key_menu_right) - input_check(key_menu_left);
+
+        if h_input != 0 {
+            if volume_option_timer mod volume_option_period == 0 || volume_option_timer > volume_option_delay {
+                config_set("sound_volume", clamp(config_get("sound_volume") + h_input, 0, 100));
+                sound_set_sound_volume(config_get("sound_volume"));
+            }
+            volume_option_timer += 1;
+        }
+        else {
+            volume_option_timer = 0;
+        }
+
+        break;
+
+    case "name":
+        return "Sound Volume";
+
+    case "value":
+        return str_cat(config_get("sound_volume"), "%");
+
+}

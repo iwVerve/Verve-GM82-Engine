@@ -29,6 +29,10 @@ for(i = 0; i < ds_list_size(global.options_list); i += 1) {
     ds_list_add(options_list, option);
 }
 
+volume_option_timer = 0;
+volume_option_period = 10;
+volume_option_delay = 10;
+
 // Keyboard state
 current_key = 0;
 is_rebinding = false;
@@ -67,6 +71,8 @@ v_input = input_check_pressed(key_menu_down) - input_check_pressed(key_menu_up);
 if state == state_options {
     if v_input != 0 {
         current_option = modwrap(current_option + v_input, 0, ds_list_size(options_list));
+        option = ds_list_find_value(options_list, current_option);
+        script_execute(option, "init");
     }
 
     option = ds_list_find_value(options_list, current_option);

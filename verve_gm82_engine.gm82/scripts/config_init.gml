@@ -10,6 +10,9 @@ option_list();
 
 config_read();
 
+config_default("music_volume", 25);
+config_default("sound_volume", 25);
 config_default("fullscreen", false);
+config_default("smoothing", false);
 
 config_write();

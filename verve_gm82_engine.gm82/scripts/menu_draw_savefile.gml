@@ -14,7 +14,7 @@ draw_set_halign(fa_middle);
 draw_set_valign(fa_top);
 draw_set_color(c_black);
 draw_set_font(fDefaultLarge);
-draw_text(xx + 64, yy, str_cat("Save ", index));
+draw_text(xx + 64, yy, str_cat("Save ", index + 1));
 
 draw_set_font(fDefaultSmall);
 
