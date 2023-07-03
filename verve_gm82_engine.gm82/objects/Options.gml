@@ -6,7 +6,6 @@ applies_to=self
 */
 var i, option;
 
-
 // State
 state_options = 0;
 state_keyboard_controls = 1;
@@ -32,6 +31,7 @@ for(i = 0; i < ds_list_size(global.options_list); i += 1) {
 
 // Keyboard state
 current_key = 0;
+is_rebinding = false;
 
 // Visuals
 options_x_margin = 124;
@@ -60,7 +60,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-var v_input, option;
+var v_input, option, key;
 
 v_input = input_check_pressed(key_menu_down) - input_check_pressed(key_menu_up);
 
@@ -77,12 +77,39 @@ if state == state_options {
     }
 }
 else if state == state_keyboard_controls {
-    if v_input != 0 {
-        current_key = modwrap(current_key + v_input, 0, ds_list_size(global.input_rebindable_list) + 1);
-    }
+    if !is_rebinding {
+        if v_input != 0 {
+            current_key = modwrap(current_key + v_input, 0, ds_list_size(global.input_rebindable_list) + 1);
+        }
 
-    if input_check_pressed(key_menu_back) {
-        room_goto(rMenu);
+        if input_check_pressed(key_menu_accept) {
+            if current_key < ds_list_size(global.input_rebindable_list) {
+                // Start rebind
+                is_rebinding = true;
+            }
+            else {
+                // Reset controls
+                input_reset_keys();
+            }
+        }
+
+        if input_check_pressed(key_menu_back) {
+            state = state_options;
+        }
+    }
+    else {
+        // Wait for new bind
+        if keyboard_check_pressed(vk_anykey) {
+            key = keyboard_key;
+
+            if key == 160 || key == 161 {
+                key = vk_shift;
+            }
+
+            ds_map_set(global.input_keyboard_map, ds_list_find_value(global.input_rebindable_list, current_key), key);
+            //input_set_key(ds_map_get(global.input_rebindable_list, current_key), key);
+            is_rebinding = false;
+        }
     }
 }
 
@@ -107,6 +134,7 @@ applies_to=self
 ds_list_destroy(options_list);
 
 config_write();
+input_write();
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -146,7 +174,13 @@ else if state == state_keyboard_controls {
         if i < ds_list_size(global.input_rebindable_list) {
             input = ds_list_find_value(global.input_rebindable_list, i);
             row_name = input_get_name(input);
-            row_value = key_get_name(input_get_key(input));
+
+            if !is_rebinding || i != current_key {
+                row_value = key_get_name(input_get_key(input));
+            }
+            else {
+                row_value = "Press new key";
+            }
         }
         else {
             row_name = "Reset Controls";

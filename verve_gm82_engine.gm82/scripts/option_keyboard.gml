@@ -11,6 +11,7 @@ switch(argument0) {
     case "step":
         if input_check_pressed(key_menu_accept) || input_check_pressed(key_menu_left) || input_check_pressed(key_menu_right) {
             state = state_keyboard_controls;
+            current_key = 0;
         }
         break;
 

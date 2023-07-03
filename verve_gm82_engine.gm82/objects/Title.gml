@@ -22,7 +22,7 @@ draw_text_outlined(400, 280, global.game_title, c_white, c_black, 2);
 
 draw_set_font(fTitleSmall);
 key_name = key_get_name(input_get_key(key_menu_accept));
-draw_text_outlined(400, 344, str_cat("Press -", key_name, "- to Start"), c_white, c_black, 2);
+draw_text_outlined(400, 344, str_cat("Press ", key_name, " to Start"), c_white, c_black, 2);
 
 if global.debug {
     draw_set_font(fDefaultBig);

@@ -47,3 +47,5 @@ option_smoothing
 render_update
 option_keyboard
 input_get_name
+input_set_key
+input_reset_keys

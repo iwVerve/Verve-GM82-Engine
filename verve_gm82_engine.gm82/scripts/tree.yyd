@@ -15,12 +15,14 @@
 	|input_init
 	|input_define
 	|input_get_key
+	|input_set_key
 	|input_get_name
 	|input_check
 	|input_check_pressed
 	|input_check_released
 	|input_write
 	|input_read
+	|input_reset_keys
 +Save
 	|save_init
 	|save_set
