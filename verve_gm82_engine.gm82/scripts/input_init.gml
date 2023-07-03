@@ -1,5 +1,9 @@
 ///input_init()
 
+// Sets up all the data necessary to allow for rebinds.
+// This script also holds all the default values.
+// The key constants are defined in the project;s Used-Defined Constants window.
+
 global.input_keyboard_file = global.save_folder + "keyboard";
 
 // Stores the current keybinds.
@@ -36,5 +40,3 @@ input_define(key_menu_down,    "", vk_down,  false);
 input_define(key_menu_accept,  "", vk_shift, false);
 input_define(key_menu_back,    "", ord("Z"), false);
 input_define(key_menu_options, "", vk_enter, false);
-
-input_write();

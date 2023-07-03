@@ -1,4 +1,7 @@
 ///save_select(index)
+
+// Selects a different save file.
+
 var map;
 
 global.save_current = argument0;

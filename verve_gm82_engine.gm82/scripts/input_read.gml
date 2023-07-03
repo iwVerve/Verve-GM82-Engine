@@ -1,6 +1,6 @@
 ///input_read()
 
-// Reads the current game options from disk.
+// Reads the current binds from disk.
 
 var file;
 

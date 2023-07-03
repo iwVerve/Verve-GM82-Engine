@@ -1,5 +1,7 @@
 ///event_game_start()
 
+// The main initialization script.
+
 engine_settings();
 
 directory_create(working_directory + "\" + global.save_folder);

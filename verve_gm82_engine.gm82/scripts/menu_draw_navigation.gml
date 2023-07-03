@@ -1,4 +1,7 @@
 ///menu_draw_navigation(include_options)
+
+// Draws the instructions on how to navigate the main menu.
+
 var include_options, accept_button, back_button, options_button;
 
 accept_button = key_get_name(input_get_key(key_menu_accept));

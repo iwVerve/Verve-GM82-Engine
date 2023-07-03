@@ -1,5 +1,7 @@
 ///save_default([index])
 
+// Sets the default state of a save file, used when starting a new game.
+
 if argument_count > 0 {
     save_select(argument[0]);
 }

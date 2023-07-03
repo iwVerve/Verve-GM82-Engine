@@ -1,4 +1,7 @@
 ///input_reset_keys()
+
+// Resets keybinds to their defaults, set in input_init.
+
 var i, input, key;
 
 for (i = 0; i < ds_list_size(global.input_rebindable_list); i += 1) {

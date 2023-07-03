@@ -1,4 +1,7 @@
 ///render_compose()
+
+// This script draws the application surface to the game window.
+
 var target_width, target_height;
 
 texture_set_interpolation(config_get("smoothing"));

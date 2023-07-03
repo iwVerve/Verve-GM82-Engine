@@ -1,5 +1,7 @@
 ///render_update()
 
+// Appropriately resizes the window buffer, allowing for smoothing.
+
 if config_get("smoothing") {
     target_width = window_get_width();
     target_height = window_get_height();

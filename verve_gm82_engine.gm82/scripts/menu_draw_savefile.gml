@@ -1,4 +1,8 @@
 ///menu_draw_savefile(index, x, y)
+
+// Draws a savefile on the file select screen.
+// Must be called by the Menu object.
+
 var i, index, xx, yy, selected, top_text;
 
 index = argument0;

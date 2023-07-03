@@ -1,6 +1,6 @@
 ///save_read()
 
-// Reads the current save data from disk.
+// Reads the current save file from disk.
 
 var i, file;
 

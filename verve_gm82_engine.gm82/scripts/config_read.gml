@@ -1,6 +1,6 @@
 ///config_read()
 
-// Reads the current game options from disk.
+// Reads the saved game options from disk.
 
 var file;
 
