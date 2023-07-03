@@ -15,6 +15,7 @@
 	|input_init
 	|input_define
 	|input_get_key
+	|input_get_name
 	|input_check
 	|input_check_pressed
 	|input_check_released
@@ -44,6 +45,7 @@
 		|option_music
 		|option_fullscreen
 		|option_smoothing
+		|option_keyboard
 +Menu
 	|menu_draw_savefile
 	|menu_draw_navigation

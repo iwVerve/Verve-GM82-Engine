@@ -6,6 +6,13 @@ applies_to=self
 */
 var i, option;
 
+
+// State
+state_options = 0;
+state_keyboard_controls = 1;
+state = state_options;
+
+// Options state
 options_list = ds_list_create();
 current_option = 0;
 
@@ -23,10 +30,19 @@ for(i = 0; i < ds_list_size(global.options_list); i += 1) {
     ds_list_add(options_list, option);
 }
 
-x_margin = 124;
-y_step = 48;
+// Keyboard state
+current_key = 0;
 
-y_start = 304 - y_step * (ds_list_size(options_list) - 1) / 2;
+// Visuals
+options_x_margin = 124;
+options_y_step = 48;
+options_font = fDefaultLarge;
+options_y_start = 304 - options_y_step * (ds_list_size(options_list) - 1) / 2;
+
+keyboard_x_margin = 120;
+keyboard_y_step = 40;
+keyboard_font = fDefaultBig;
+keyboard_y_start = 304 - keyboard_y_step * (ds_list_size(global.input_rebindable_list)) / 2;
 
 animation_timer = 0;
 #define Destroy_0
@@ -48,15 +64,26 @@ var v_input, option;
 
 v_input = input_check_pressed(key_menu_down) - input_check_pressed(key_menu_up);
 
-if v_input != 0 {
-    current_option = modwrap(current_option + v_input, 0, ds_list_size(options_list));
+if state == state_options {
+    if v_input != 0 {
+        current_option = modwrap(current_option + v_input, 0, ds_list_size(options_list));
+    }
+
+    option = ds_list_find_value(options_list, current_option);
+    script_execute(option, "step");
+
+    if input_check_pressed(key_menu_back) {
+        room_goto(rMenu);
+    }
 }
+else if state == state_keyboard_controls {
+    if v_input != 0 {
+        current_key = modwrap(current_key + v_input, 0, ds_list_size(global.input_rebindable_list) + 1);
+    }
 
-option = ds_list_find_value(options_list, current_option);
-script_execute(option, "step");
-
-if input_check_pressed(key_menu_back) {
-    room_goto(rMenu);
+    if input_check_pressed(key_menu_back) {
+        room_goto(rMenu);
+    }
 }
 
 animation_timer += 1;
@@ -86,26 +113,55 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-var i, yy, option, text;
+var i, yy, option, text, input, reset_row, row_name, row_value;
 
 draw_set_font(fDefaultLarge);
 draw_set_valign(fa_middle);
-yy = y_start;
 
-for(i = 0; i < ds_list_size(options_list); i += 1) {
-    option = ds_list_find_value(options_list, i);
+if state == state_options {
+    yy = options_y_start;
+    draw_set_font(options_font);
 
-    draw_set_halign(fa_left);
-    text = script_execute(option, "name");
-    draw_text_outlined(x_margin, yy, text, c_white, c_black, 2);
+    for(i = 0; i < ds_list_size(options_list); i += 1) {
+        option = ds_list_find_value(options_list, i);
 
-    draw_set_halign(fa_right);
-    text = script_execute(option, "value");
-    draw_text_outlined(800 - x_margin, yy, text, c_white, c_black, 2);
+        row_name = script_execute(option, "name");
+        row_value = script_execute(option, "value");
 
-    yy += y_step;
+        draw_set_halign(fa_left);
+        draw_text_outlined(options_x_margin, yy, row_name, c_white, c_black, 2);
+        draw_set_halign(fa_right);
+        draw_text_outlined(800 - options_x_margin, yy, row_value, c_white, c_black, 2);
+
+        yy += options_y_step;
+    }
+
+    draw_sprite(sprPlayerIdle, animation_timer / 5, options_x_margin - 16, options_y_start + options_y_step * current_option + 2);
 }
+else if state == state_keyboard_controls {
+    yy = keyboard_y_start;
+    draw_set_font(keyboard_font);
 
-draw_sprite(sprPlayerIdle, animation_timer / 5, x_margin - 16, y_start + y_step * current_option);
+    for(i = 0; i < ds_list_size(global.input_rebindable_list) + 1; i += 1) {
+        if i < ds_list_size(global.input_rebindable_list) {
+            input = ds_list_find_value(global.input_rebindable_list, i);
+            row_name = input_get_name(input);
+            row_value = key_get_name(input_get_key(input));
+        }
+        else {
+            row_name = "Reset Controls";
+            row_value = "";
+        }
+
+        draw_set_halign(fa_left);
+        draw_text_outlined(keyboard_x_margin, yy, row_name, c_white, c_black, 2);
+        draw_set_halign(fa_right);
+        draw_text_outlined(800 - keyboard_x_margin, yy, row_value, c_white, c_black, 2);
+
+        yy += keyboard_y_step;
+    }
+
+    draw_sprite(sprPlayerIdle, animation_timer / 5, keyboard_x_margin - 16, keyboard_y_start + keyboard_y_step * current_key + 2);
+}
 
 menu_draw_navigation(false);
