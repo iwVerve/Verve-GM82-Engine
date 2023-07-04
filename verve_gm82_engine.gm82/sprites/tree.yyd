@@ -16,10 +16,13 @@
 	|sprPlayerStart
 	|sprPlayerBow
 	|sprBullet
+	|sprBlood
 +Menu
 	|sprFileBackground
 +Blocks
 	|sprBlockMask
+	|sprBlockMiniMask
+	|sprPlatform
 +Killers
 	|sprCherry
 +Saves

@@ -62,5 +62,5 @@ if can_save && instance_exists(Player) && global.grav == grav {
     alarm[0] = 30;
     image_speed = 1/60;
 
-    save_save(true);
+    save_save();
 }

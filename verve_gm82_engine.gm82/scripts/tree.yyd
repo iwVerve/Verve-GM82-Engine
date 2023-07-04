@@ -19,6 +19,7 @@
 	|player_hit_ceiling
 	|player_land
 	|player_shoot
+	|player_kill
 +Music
 	|sound_init
 	|sound_set_sound_volume
@@ -68,3 +69,4 @@
 	|draw_text_outlined
 	|key_get_name
 	|ternary
+	|get_formatted_time

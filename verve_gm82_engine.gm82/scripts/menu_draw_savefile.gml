@@ -27,8 +27,8 @@ if !selected || state == state_not_selected {
         top_text = global.difficulty_names[save_get("difficulty") + 1];
 
         draw_set_halign(fa_left);
-        draw_text(xx + 10, yy + 70, str_cat("Deaths: ", save_get("deaths")));
-        draw_text(xx + 10, yy + 90, str_cat("Time: ", save_get("time")));
+        draw_text(xx + 8, yy + 70, str_cat("Deaths: ", save_get("deaths")));
+        draw_text(xx + 8, yy + 90, str_cat("Time: ", get_formatted_time(save_get("time"))));
     }
     else {
         top_text = "No Data";

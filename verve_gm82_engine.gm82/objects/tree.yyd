@@ -7,7 +7,11 @@
 	|PlayerStart
 	|Player
 	|Bullet
+	|BloodEmitter
+	|Blood
 +Blocks
 	|Block
+	|BlockMini
+	|Platform
 +Saves
 	|Save

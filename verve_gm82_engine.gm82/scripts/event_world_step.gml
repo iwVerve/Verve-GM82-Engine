@@ -25,6 +25,8 @@ if is_in_game() {
     if input_check_pressed(key_restart) {
         save_load();
     }
+
+    save_set_persistent("time", save_get("time") + 1 / room_speed);
 }
 
 render_update();

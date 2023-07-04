@@ -61,3 +61,5 @@ player_hit_ceiling
 player_land
 player_shoot
 is_in_game
+get_formatted_time
+player_kill

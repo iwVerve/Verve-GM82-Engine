@@ -69,7 +69,7 @@ if input_check_pressed(key_shoot) {
     player_shoot();
 }
 if input_check_pressed(key_suicide) {
-
+    player_kill();
 }
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -124,7 +124,7 @@ applies_to=self
 */
 /// Player animation
 
-if !place_free(x, y + global.grav) {
+if on_floor {
     if h_input != 0 {
         sprite_index = sprPlayerRun;
         image_speed = 0.5;
@@ -143,6 +143,38 @@ else {
         sprite_index = sprPlayerFall;
         image_speed = 0.5;
     }
+}
+#define Collision_Platform
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+var feet_y, platform_floor, clamped_platform_vspeed, landed_on_platform, jumped_out, yy, dir;
+
+feet_y = ternary(global.grav == 1, bbox_bottom, bbox_top);
+platform_floor = ternary(global.grav == 1, other.bbox_top, other.bbox_bottom);
+upwards_platform_vspeed = global.grav * min(global.grav * other.vspeed, 0);
+downwards_platform_vspeed = global.grav * max(global.grav * other.vspeed, 0);
+
+// Whether the player was above the platform on the previous frame.
+// Since we are touching on this frame, we must have just landed if this is true.
+landed_on_platform = global.grav * (feet_y - vspeed - global.grav) <= global.grav * (platform_floor - upwards_platform_vspeed);
+// Whether we are about to jump through the platform from below.
+jumped_out = global.grav * (feet_y + vspeed) <= global.grav * (platform_floor + other.vspeed);
+
+if landed_on_platform || (jumped_out && other.snap) {
+    // Target y position to snap to
+    yy = platform_floor + y - feet_y;
+
+    y = floor(yy);
+    if other.hspeed != 0 {
+        move_contact_solid(180 * (other.hspeed < 0), abs(other.hspeed));
+    }
+
+    vspeed = downwards_platform_vspeed;
+    on_floor = true;
+    air_jumps = max_air_jumps;
 }
 #define Other_4
 /*"/*'/**//* YYD ACTION
