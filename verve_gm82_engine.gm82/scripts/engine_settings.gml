@@ -8,7 +8,7 @@ global.debug = true;
 // The title of your game, used in the window bar and the default title screen.
 global.game_title = "Verve GM8.2 Engine";
 // The room you get loaded in on a new save file.
-global.first_room = rGame;
+global.first_room = rSample;
 // Size of the game window
 global.game_width = 800;
 global.game_height = 608;

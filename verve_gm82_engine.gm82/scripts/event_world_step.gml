@@ -21,4 +21,10 @@ if keyboard_check_pressed(vk_f4) {
     config_write();
 }
 
+if is_in_game() {
+    if input_check_pressed(key_restart) {
+        save_load();
+    }
+}
+
 render_update();

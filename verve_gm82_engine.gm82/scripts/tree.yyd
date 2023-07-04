@@ -2,6 +2,7 @@
 +World
 	|update_window_caption
 	|set_room_views
+	|is_in_game
 	+Render
 		|render_init
 		|render_compose
@@ -10,6 +11,14 @@
 	|event_game_start
 	|event_room_start
 	|event_world_step
++Player
+	|player_try_jump
+	|player_ground_jump
+	|player_air_jump
+	|player_release_jump
+	|player_hit_ceiling
+	|player_land
+	|player_shoot
 +Music
 	|sound_init
 	|sound_set_sound_volume

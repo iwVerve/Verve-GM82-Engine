@@ -3,4 +3,5 @@
 	|rTitle
 	|rMenu
 	|rOptions
-|rGame
++Game
+	|rSample

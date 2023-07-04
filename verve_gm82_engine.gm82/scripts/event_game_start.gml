@@ -18,7 +18,7 @@ render_init();
 
 set_room_views();
 
-global.game_started = false;
+global.grav = 1;
 global.close_button_pressed = false;
 
 room_goto_next();

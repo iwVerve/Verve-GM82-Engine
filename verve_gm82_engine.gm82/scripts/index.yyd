@@ -53,3 +53,11 @@ option_sound_volume
 sound_set_sound_volume
 sound_set_music_volume
 set_room_views
+player_try_jump
+player_ground_jump
+player_air_jump
+player_release_jump
+player_hit_ceiling
+player_land
+player_shoot
+is_in_game

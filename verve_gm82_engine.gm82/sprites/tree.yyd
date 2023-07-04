@@ -12,8 +12,16 @@
 	|sprPlayerFall
 	|sprPlayerSlide
 	|sprPlayerMask
+	|sprPlayerMaskFlip
 	|sprPlayerStart
+	|sprPlayerBow
+	|sprBullet
 +Menu
 	|sprFileBackground
++Blocks
+	|sprBlockMask
 +Killers
 	|sprCherry
++Saves
+	|sprSaveMask
+	|sprSave

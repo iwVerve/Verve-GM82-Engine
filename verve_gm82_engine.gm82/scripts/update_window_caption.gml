@@ -6,7 +6,7 @@ var caption;
 
 caption = global.game_title;
 
-if global.game_started {
+if is_in_game() {
 
 }
 

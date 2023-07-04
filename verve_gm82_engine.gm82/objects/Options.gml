@@ -22,7 +22,7 @@ for(i = 0; i < ds_list_size(global.options_list); i += 1) {
         continue;
     }
 
-    if global.game_started && !script_execute(option, "in_pause") {
+    if is_in_game() && !script_execute(option, "in_pause") {
         continue;
     }
 

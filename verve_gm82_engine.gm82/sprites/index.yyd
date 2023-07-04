@@ -12,3 +12,9 @@ sprMenu
 sprMusic
 sprCamera
 sprKiller
+sprPlayerMaskFlip
+sprPlayerBow
+sprBlockMask
+sprBullet
+sprSave
+sprSaveMask
