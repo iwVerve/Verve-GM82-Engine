@@ -16,9 +16,10 @@ sound_init();
 
 render_init();
 
-set_room_views();
-
 global.grav = 1;
 global.close_button_pressed = false;
+
+set_room_views();
+io_set_roomend_clear(false);
 
 room_goto_next();
