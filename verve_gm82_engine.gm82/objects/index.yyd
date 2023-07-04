@@ -7,7 +7,7 @@ Player
 PlayerStart
 Block
 Bullet
-Save
+SaveHard
 Blood
 BloodEmitter
 BlockMini
@@ -24,3 +24,10 @@ MiniSpikeRight
 MiniSpikeDown
 MiniSpikeLeft
 GameOver
+SaveMedium
+
+SaveVeryHard
+SaveMediumFlip
+
+SaveHardFlip
+SaveVeryHardFlip

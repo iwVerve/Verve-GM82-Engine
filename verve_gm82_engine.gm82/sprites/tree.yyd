@@ -36,4 +36,9 @@
 	|sprCherry
 +Saves
 	|sprSaveMask
-	|sprSave
+	|sprSaveMedium
+	|sprSaveMediumFlip
+	|sprSaveHard
+	|sprSaveHardFlip
+	|sprSaveVeryHard
+	|sprSaveVeryHardFlip

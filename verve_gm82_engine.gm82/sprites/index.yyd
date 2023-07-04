@@ -16,7 +16,7 @@ sprPlayerMaskFlip
 sprPlayerBow
 sprBlockMask
 sprBullet
-sprSave
+sprSaveHard
 sprSaveMask
 sprBlood
 sprBlockMiniMask
@@ -30,3 +30,8 @@ sprMiniSpikeRight
 sprMiniSpikeDown
 sprMiniSpikeLeft
 sprGameOver
+sprSaveMedium
+sprSaveVeryHard
+sprSaveMediumFlip
+sprSaveHardFlip
+sprSaveVeryHardFlip
