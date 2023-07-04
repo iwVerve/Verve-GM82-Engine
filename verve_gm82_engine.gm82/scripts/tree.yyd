@@ -1,6 +1,7 @@
 |engine_settings
 +World
 	|update_window_caption
+	|set_room_views
 	+Render
 		|render_init
 		|render_compose

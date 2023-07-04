@@ -7,8 +7,8 @@ if config_get("smoothing") {
     target_height = window_get_height();
 }
 else {
-    target_width = 800;
-    target_height = 608;
+    target_width = global.game_width;
+    target_height = global.game_height;
 }
 
 if  global.render_width != target_width || global.render_height != target_height {

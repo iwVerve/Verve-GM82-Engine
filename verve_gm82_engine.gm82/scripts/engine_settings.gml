@@ -9,6 +9,9 @@ global.debug = true;
 global.game_title = "Verve GM8.2 Engine";
 // The room you get loaded in on a new save file.
 global.first_room = rGame;
+// Size of the game window
+global.game_width = 800;
+global.game_height = 608;
 
 // The location of all save data files.
 global.save_folder = "save\";

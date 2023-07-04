@@ -44,12 +44,12 @@ is_rebinding = false;
 options_x_margin = 124;
 options_y_step = 48;
 options_font = fDefaultLarge;
-options_y_start = 304 - options_y_step * (ds_list_size(options_list) - 1) / 2;
+options_y_start = global.game_height / 2 - options_y_step * (ds_list_size(options_list) - 1) / 2;
 
 keyboard_x_margin = 120;
 keyboard_y_step = 40;
 keyboard_font = fDefaultBig;
-keyboard_y_start = 304 - keyboard_y_step * (ds_list_size(global.input_rebindable_list)) / 2;
+keyboard_y_start = global.game_height / 2 - keyboard_y_step * (ds_list_size(global.input_rebindable_list)) / 2;
 
 animation_timer = 0;
 #define Destroy_0
@@ -170,7 +170,7 @@ if state == state_options {
         draw_set_halign(fa_left);
         draw_text_outlined(options_x_margin, yy, row_name, c_white, c_black, 2);
         draw_set_halign(fa_right);
-        draw_text_outlined(800 - options_x_margin, yy, row_value, c_white, c_black, 2);
+        draw_text_outlined(global.game_width - options_x_margin, yy, row_value, c_white, c_black, 2);
 
         yy += options_y_step;
     }
@@ -201,7 +201,7 @@ else if state == state_keyboard_controls {
         draw_set_halign(fa_left);
         draw_text_outlined(keyboard_x_margin, yy, row_name, c_white, c_black, 2);
         draw_set_halign(fa_right);
-        draw_text_outlined(800 - keyboard_x_margin, yy, row_value, c_white, c_black, 2);
+        draw_text_outlined(global.game_width - keyboard_x_margin, yy, row_value, c_white, c_black, 2);
 
         yy += keyboard_y_step;
     }
