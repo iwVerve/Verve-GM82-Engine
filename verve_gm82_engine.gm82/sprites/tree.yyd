@@ -17,6 +17,7 @@
 	|sprPlayerBow
 	|sprBullet
 	|sprBlood
+	|sprGameOver
 +Menu
 	|sprFileBackground
 +Blocks

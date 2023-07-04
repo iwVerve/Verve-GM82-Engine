@@ -5,5 +5,6 @@ with(Player) {
     instance_create(x, y, BloodEmitter);
     sound_play("player_death");
 
+    instance_create(0, 0, GameOver);
     instance_destroy();
 }

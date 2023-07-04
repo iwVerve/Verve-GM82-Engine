@@ -9,6 +9,7 @@
 	|Bullet
 	|BloodEmitter
 	|Blood
+	|GameOver
 +Blocks
 	|Block
 	|BlockMini
