@@ -21,3 +21,11 @@ sprSaveMask
 sprBlood
 sprBlockMiniMask
 sprPlatform
+sprSpikeUp
+sprSpikeRight
+sprSpikeDown
+sprSpikeLeft
+sprMiniSpikeUp
+sprMiniSpikeRight
+sprMiniSpikeDown
+sprMiniSpikeLeft

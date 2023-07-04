@@ -62,7 +62,7 @@ else if state == state_difficulty {
         }
         else {
             if save_get("exists") {
-                current_overwrite = 0;
+                current_overwrite = 1;
                 state = state_overwrite;
             }
             else {

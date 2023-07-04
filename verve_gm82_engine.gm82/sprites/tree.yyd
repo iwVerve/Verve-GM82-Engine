@@ -24,6 +24,14 @@
 	|sprBlockMiniMask
 	|sprPlatform
 +Killers
+	|sprSpikeUp
+	|sprSpikeRight
+	|sprSpikeDown
+	|sprSpikeLeft
+	|sprMiniSpikeUp
+	|sprMiniSpikeRight
+	|sprMiniSpikeDown
+	|sprMiniSpikeLeft
 	|sprCherry
 +Saves
 	|sprSaveMask

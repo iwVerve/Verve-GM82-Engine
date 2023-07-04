@@ -13,5 +13,16 @@
 	|Block
 	|BlockMini
 	|Platform
++Killers
+	|PlayerKiller
+	|SpikeUp
+	|SpikeRight
+	|SpikeDown
+	|SpikeLeft
+	|MiniSpikeUp
+	|MiniSpikeRight
+	|MiniSpikeDown
+	|MiniSpikeLeft
+	|Cherry
 +Saves
 	|Save

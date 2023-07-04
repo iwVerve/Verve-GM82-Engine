@@ -9,14 +9,14 @@ alarm[0] = 40;
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
-action_id=603
+action_id=203
 applies_to=self
+invert=0
 */
-instance_destroy();
 #define Collision_Block
 /*"/*'/**//* YYD ACTION
 lib_id=1
-action_id=603
+action_id=203
 applies_to=self
+invert=0
 */
-instance_destroy();

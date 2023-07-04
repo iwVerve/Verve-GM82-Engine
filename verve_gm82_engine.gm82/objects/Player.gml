@@ -168,6 +168,16 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+///Killer collision
+
+if place_meeting(x, y, PlayerKiller) {
+    player_kill();
+}
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
 /// Player animation
 
 if on_floor {
