@@ -1,1 +1,1 @@
-vspeed = 2.5;
+vspeed = 1.5;

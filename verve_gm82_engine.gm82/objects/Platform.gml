@@ -23,12 +23,15 @@ if speed != 0 {
     }
 
     if global.grav * vspeed > 0 {
-//        if place_meeting(x, y - global.grav, Player) {
-            with(Player) {
-                if !place_meeting(x, y, other) if place_meeting(x, y + 2 * global.grav, other) {
+        with(Player) {
+            if !place_meeting(x, y, other) if place_meeting(x, y + other.vspeed, other) {
+                if !place_free(x, y + other.vspeed) {
                     move_contact_solid(90 + 180 * (global.grav == 1), abs(other.vspeed));
                 }
+                else {
+                    y += other.vspeed;
+                }
             }
-//        }
+        }
     }
 }
