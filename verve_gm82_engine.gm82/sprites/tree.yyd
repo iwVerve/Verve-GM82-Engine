@@ -35,6 +35,21 @@
 	|sprMiniSpikeDown
 	|sprMiniSpikeLeft
 	|sprCherry
+	+Cherry colors
+		|sprCherryOrange
+		|sprCherryYellow
+		|sprCherryChartreuse
+		|sprCherryGreen
+		|sprCherryEmerald
+		|sprCherryCyan
+		|sprCherryAzure
+		|sprCherryBlue
+		|sprCherryViolet
+		|sprCherryMagenta
+		|sprCherryPink
+		|sprCherryWhite
+		|sprCherryGray
+		|sprCherryBlack
 +Saves
 	|sprSaveMask
 	|sprSaveMedium
