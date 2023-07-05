@@ -45,3 +45,6 @@
 	|GravityUp
 	|GravityDown
 	|Sign
++Warps
+	|RoomChanger
+	|Warp

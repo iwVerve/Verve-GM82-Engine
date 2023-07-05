@@ -6,7 +6,6 @@ slopes
 ice, conveyors
 camera
 cherry colors?
-warps
 items, boss items
 savefile encryption?
 iwpo compatibility

@@ -46,3 +46,6 @@ sprGravityDown
 sprWaterCatharsis
 sprSaveBlocker
 sprSign
+
+sprWarp
+sprTriggerMask

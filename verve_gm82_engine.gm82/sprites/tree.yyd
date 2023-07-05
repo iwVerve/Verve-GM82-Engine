@@ -54,3 +54,6 @@
 	|sprGravityUp
 	|sprGravityDown
 	|sprSign
+	|sprWarp
++Triggers
+	|sprTriggerMask

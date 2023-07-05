@@ -20,6 +20,8 @@ global.save_folder = "save\";
 // Modifies the volume of everything. Recommended to keep below 0.7.
 global.sound_gain = 0.7;
 
+global.killer_room_border = true;
+
 global.difficulty_count = 4;
 global.difficulty_names[0] = "Load Game";
 global.difficulty_names[1] = "Medium";

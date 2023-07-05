@@ -220,10 +220,29 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-///Killer collision
+///Killer collision, outside room checks
+var _warp;
 
 if place_meeting(x, y, PlayerKiller) {
     player_kill();
+}
+
+if global.killer_room_border if bbox_right < 0 || bbox_left >= room_width || bbox_bottom < 0 || bbox_top >= room_height {
+    _warp = noone;
+    with(RoomChanger) {
+        if outside || wrap_around if place_meeting(x, y, Player) {
+            _warp = id;
+        }
+    }
+
+    if _warp != noone {
+        with(_warp) {
+            event_user(0);
+        }
+    }
+    else {
+        player_kill();
+    }
 }
 /*"/*'/**//* YYD ACTION
 lib_id=1
