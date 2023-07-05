@@ -43,3 +43,6 @@
 	|sprSaveVeryHard
 	|sprSaveVeryHardFlip
 +Gimmicks
+	|sprWater
+	|sprWaterRefreshing
+	|sprWaterGroundJump

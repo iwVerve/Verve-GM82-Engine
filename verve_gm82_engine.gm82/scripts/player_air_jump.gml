@@ -1,5 +1,12 @@
 ///player_air_jump()
 
 vspeed = -global.grav * air_jump_speed;
-air_jumps -= 1;
+
+if place_meeting(x, y, WaterRefreshing) {
+    air_jumps = max_air_jumps;
+}
+else {
+    air_jumps -= 1;
+}
+
 sound_play("player_air_jump");

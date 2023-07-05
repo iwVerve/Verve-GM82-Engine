@@ -2,6 +2,6 @@ sprite=sprPlayerIdle
 visible=1
 solid=0
 persistent=1
-depth=0
+depth=-10
 parent=
 mask=sprPlayerMask

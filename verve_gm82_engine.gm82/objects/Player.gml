@@ -27,6 +27,7 @@ action_id=603
 applies_to=self
 */
 /// Movement
+var current_max_vspeed;
 
 // Horizontal movement
 h_input = input_check(key_right);
@@ -43,8 +44,15 @@ else {
 }
 
 // Vertical movement
-if global.grav * vspeed > max_vspeed {
-    vspeed = global.grav * max_vspeed;
+current_max_vspeed = max_vspeed;
+if place_meeting(x, y, Water) {
+    current_max_vspeed = 2;
+    if place_meeting(x, y, WaterRefreshing) {
+        air_jumps = max_air_jumps;
+    }
+}
+if global.grav * vspeed > current_max_vspeed {
+    vspeed = global.grav * current_max_vspeed;
 }
 
 if on_floor {
