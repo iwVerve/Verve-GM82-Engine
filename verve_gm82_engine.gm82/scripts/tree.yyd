@@ -26,6 +26,10 @@
 	|sound_init
 	|sound_set_sound_volume
 	|sound_set_music_volume
+	|music_play
+	|music_stop
+	|music_get_room_bgm
+	|music_play_room_bgm
 +Input
 	|input_init
 	|input_define

@@ -6,6 +6,9 @@
 
 var i, _file, _folders, _folders_count;
 
+global.current_music = "";
+global.current_music_instance = noone;
+
 sound_global_volume(global.sound_gain);
 
 // Sounds

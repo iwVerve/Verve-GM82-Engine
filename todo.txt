@@ -3,7 +3,6 @@ savefile items/clear
 controller support
 moving solids
 triggers
-music
 slopes
 ice, conveyors
 camera
