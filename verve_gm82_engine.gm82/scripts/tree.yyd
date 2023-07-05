@@ -20,6 +20,8 @@
 	|player_land
 	|player_shoot
 	|player_kill
+	|player_flip
+	|player_set_mask
 +Music
 	|sound_init
 	|sound_set_sound_volume

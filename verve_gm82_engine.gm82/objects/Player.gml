@@ -8,19 +8,20 @@ applies_to=self
 ground_jump_speed = 8.5;
 air_jump_speed = 7;
 jump_release_multiplier = 0.45;
-grav = 0.4;
+gravity = 0.4 * global.grav;
 max_air_jumps = 1;
 max_vspeed = 9;
 run_speed = 3;
 
 // State
 air_jumps = max_air_jumps;
-gravity = grav * global.grav;
 h_input = 0;
 x_scale = 1;
 has_bow = (save_get("difficulty") == 0);
 on_floor = false;
 on_vine = false;
+
+player_set_mask();
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -149,7 +150,7 @@ if !place_free(x + hspeed, y + vspeed) {
         
         move_contact_solid(dir, dist);
         
-        if vspeed < 0 {
+        if global.grav * vspeed < 0 {
             player_hit_ceiling();
         }
         else {
@@ -253,12 +254,6 @@ else {
         image_speed = 0.5;
     }
 }
-#define Collision_Platform
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
 #define Other_4
 /*"/*'/**//* YYD ACTION
 lib_id=1

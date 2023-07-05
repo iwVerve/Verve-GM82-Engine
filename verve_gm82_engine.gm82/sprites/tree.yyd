@@ -49,3 +49,5 @@
 	|sprVineLeft
 	|sprVineRight
 	|sprJumpRefresher
+	|sprGravityUp
+	|sprGravityDown

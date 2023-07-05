@@ -39,3 +39,5 @@
 	|VineLeft
 	|VineRight
 	|JumpRefresher
+	|GravityUp
+	|GravityDown
