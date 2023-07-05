@@ -1,5 +1,4 @@
 debug keys
-savefile overwrite confirmation
 savefile items/clear
 controller support
 moving solids

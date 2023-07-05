@@ -15,3 +15,4 @@ key_menu_down=13
 key_menu_accept=14
 key_menu_back=15
 key_menu_options=16
+lf=chr(13) + chr(10)

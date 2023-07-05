@@ -39,6 +39,7 @@ else {
         _top_text = str_cat("< ", global.difficulty_names[current_difficulty + 1], " >");
     }
     else if state == state_overwrite {
+        draw_text(xx + 64, yy - 100, "Are you sure" + lf + "you want to" + lf + "overwrite this save?");
         _top_text = ternary(current_overwrite == 1, "< Yes >", "< No >");
     }
 }
