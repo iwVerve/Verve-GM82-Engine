@@ -20,6 +20,7 @@ h_input = 0;
 x_scale = 1;
 has_bow = (save_get("difficulty") == 0);
 on_floor = false;
+on_vine = false;
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -28,6 +29,8 @@ applies_to=self
 */
 /// Movement
 var current_max_vspeed;
+
+
 
 // Horizontal movement
 h_input = input_check(key_right);
@@ -78,6 +81,44 @@ if input_check_pressed(key_shoot) {
 }
 if input_check_pressed(key_suicide) {
     player_kill();
+}
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+/// Vines
+var on_vine_left, on_vine_right;
+
+on_vine_left = place_meeting(x - 1, y, VineLeft);
+on_vine_right = place_meeting(x + 1, y, VineRight);
+
+on_vine = on_vine_left || on_vine_right;
+
+if on_vine {
+    if on_vine_right {
+        x_scale = -1;
+    }
+    else {
+        x_scale = 1;
+    }
+
+    vspeed = 2 * global.grav;
+
+    if (on_vine_left && input_check_pressed(key_right)) || (on_vine_right && input_check_pressed(key_left)) {
+        if input_check(key_jump) {
+            hspeed = 15;
+            vspeed = -9 * global.grav;
+            sound_play("player_wall_jump");
+        }
+        else {
+            hspeed = 3;
+        }
+
+        if on_vine_right {
+            hspeed *= -1;
+        }
+    }
 }
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -188,7 +229,11 @@ applies_to=self
 */
 /// Player animation
 
-if on_floor {
+if on_vine {
+    sprite_index = sprPlayerSlide;
+    image_speed = 0.5;
+}
+else if on_floor {
     if h_input != 0 {
         sprite_index = sprPlayerRun;
         image_speed = 0.5;

@@ -29,4 +29,5 @@ if is_in_game() {
     save_set_persistent("time", save_get("time") + 1 / room_speed);
 }
 
+update_window_caption();
 render_update();

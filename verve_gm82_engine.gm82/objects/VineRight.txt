@@ -1,0 +1,7 @@
+sprite=sprVineRight
+visible=1
+solid=0
+persistent=0
+depth=20
+parent=
+mask=
