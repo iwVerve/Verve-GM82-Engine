@@ -24,6 +24,7 @@
 	|sprBlockMask
 	|sprBlockMiniMask
 	|sprPlatform
+	|sprSaveBlocker
 +Killers
 	|sprSpikeUp
 	|sprSpikeRight
