@@ -8,9 +8,7 @@ music
 slopes
 ice, conveyors
 camera
-game over sprite text
 cherry colors?
-sign
 warps
 items, boss items
 savefile encryption?
