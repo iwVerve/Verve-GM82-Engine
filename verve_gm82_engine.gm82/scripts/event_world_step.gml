@@ -62,3 +62,4 @@ if is_in_game() {
 
 update_window_caption();
 render_update();
+debug_hotkeys();

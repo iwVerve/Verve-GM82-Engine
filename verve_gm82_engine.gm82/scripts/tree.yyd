@@ -3,6 +3,7 @@
 	|update_window_caption
 	|set_room_views
 	|is_in_game
+	|debug_hotkeys
 	+Render
 		|render_init
 		|render_compose

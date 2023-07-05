@@ -2,9 +2,7 @@
 
 // Loads the game.
 
-with(Player) {
-    instance_destroy();
-}
+instance_destroy_id(Player);
 
 ds_map_copy(global.save_map, global.save_persistent_map);
 

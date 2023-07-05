@@ -9,6 +9,7 @@ if !instance_exists(Player) {
 
 save_set("saved", true);
 
+save_set("room", room);
 save_set("x", Player.x);
 save_set("y", Player.y);
 save_set("x_scale", Player.x_scale);

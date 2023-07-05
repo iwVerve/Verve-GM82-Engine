@@ -1,6 +1,12 @@
-///is_in_game()
+///is_in_game([room])
+var _room;
 
-switch(room) {
+_room = room;
+if argument_count > 0 {
+    _room = argument[0];
+}
+
+switch(_room) {
     case rInit:
     case rTitle:
     case rMenu:

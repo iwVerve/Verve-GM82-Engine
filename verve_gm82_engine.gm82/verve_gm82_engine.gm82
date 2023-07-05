@@ -20,4 +20,4 @@ has_scripts=1
 has_sounds=0
 has_sprites=1
 has_timelines=0
-has_triggers=0
+has_triggers=1

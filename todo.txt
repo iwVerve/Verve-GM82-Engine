@@ -1,4 +1,3 @@
-debug keys
 savefile items/clear
 controller support
 moving solids

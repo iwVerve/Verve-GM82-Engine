@@ -4,6 +4,7 @@
 
 // Enables dev keys
 global.debug = true;
+global.debug_key = vk_control;
 
 // The title of your game, used in the window bar and the default title screen.
 global.game_title = "Verve GM8.2 Engine";

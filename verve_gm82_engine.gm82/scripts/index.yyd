@@ -70,3 +70,4 @@ music_play
 music_stop
 music_get_room_bgm
 music_play_room_bgm
+debug_hotkeys

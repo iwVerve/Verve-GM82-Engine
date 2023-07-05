@@ -1,6 +1,6 @@
 ///player_flip([target])
 
-if argument_count > 0 && argument[0] == global.grav {
+if argument_count > 0 if argument[0] == global.grav {
     exit;
 }
 

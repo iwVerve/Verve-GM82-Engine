@@ -272,14 +272,31 @@ action_id=603
 applies_to=self
 */
 ///Prevent some drawing issues
-var _draw_x, _draw_y;
+var _draw_x, _draw_y, _draw_sprite, _draw_alpha, _draw_color, _draw_yscale;
 
 // Round draw coordinates to prevent jitter.
 _draw_x = floor(x + 0.5);
 _draw_y = floor(y + 0.5);
 
+// Debug visuals
+_draw_sprite = sprite_index;
+_draw_alpha = image_alpha;
+_draw_color = image_blend;
+_draw_y_scale = image_yscale * global.grav;
+
+if global.debug_god_mode {
+    _draw_alpha *= 0.75;
+}
+if global.debug_infinite_jump {
+    _draw_color = color_blend(_draw_color, c_blue);
+}
+if global.debug_show_mask {
+    _draw_sprite = mask_index;
+    _draw_y_scale = image_yscale;
+}
+
 // Draw the player
-draw_sprite_ext(sprite_index, image_index, _draw_x, _draw_y, x_scale, image_yscale * global.grav, image_angle, image_blend, image_alpha);
+draw_sprite_ext(_draw_sprite, image_index, _draw_x, _draw_y, x_scale, _draw_y_scale, image_angle, _draw_color, _draw_alpha);
 
 // Draw the bow
 if has_bow {
