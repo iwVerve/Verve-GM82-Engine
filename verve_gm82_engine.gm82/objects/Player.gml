@@ -30,7 +30,9 @@ action_id=603
 applies_to=self
 */
 /// Movement
-var _current_max_vspeed;
+var _current_max_vspeed, _ice, _conveyor;
+
+_ice = instance_place(x, y + global.grav, IceBlock);
 
 // Horizontal movement
 h_input = input_check(key_right);
@@ -40,10 +42,28 @@ if h_input == 0 {
 
 if h_input != 0 {
     x_scale = h_input;
+}
+
+if _ice == noone {
     hspeed = h_input * run_speed;
 }
 else {
-    hspeed = 0;
+    if h_input != 0 {
+        hspeed += h_input * _ice.slip;
+        hspeed = clamp(hspeed, -run_speed, run_speed);
+    }
+    else {
+        hspeed -= sign(hspeed) * min(_ice.slip, abs(hspeed));
+    }
+}
+
+_conveyor = instance_place(x, y + global.grav, ConveyorLeft);
+if _conveyor != noone {
+    hspeed += _conveyor.spd;
+}
+_conveyor = instance_place(x, y + global.grav, ConveyorRight);
+if _conveyor != noone {
+    hspeed += _conveyor.spd;
 }
 
 // Vertical movement

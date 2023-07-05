@@ -3,7 +3,6 @@ controller support
 moving solids
 triggers
 slopes
-ice, conveyors
 camera
 items, boss items
 savefile encryption?

@@ -23,6 +23,9 @@
 +Blocks
 	|sprBlockMask
 	|sprBlockMiniMask
+	|sprIceBlockMask
+	|sprConveyorLeft
+	|sprConveyorRight
 	|sprPlatform
 	|sprSaveBlocker
 +Killers

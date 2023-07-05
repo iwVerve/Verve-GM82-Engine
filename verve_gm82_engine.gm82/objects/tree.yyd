@@ -14,6 +14,9 @@
 +Blocks
 	|Block
 	|BlockMini
+	|IceBlock
+	|ConveyorLeft
+	|ConveyorRight
 	|Platform
 	|SaveBlocker
 +Killers
