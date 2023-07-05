@@ -59,6 +59,7 @@
 	|config_read
 	+Options
 		|option_list
+		|option_template
 		|option_music_volume
 		|option_sound_volume
 		|option_fullscreen

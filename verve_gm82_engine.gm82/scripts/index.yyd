@@ -65,3 +65,4 @@ get_formatted_time
 player_kill
 player_flip
 player_set_mask
+option_template

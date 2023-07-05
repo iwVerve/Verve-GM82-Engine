@@ -12,7 +12,6 @@ cherry colors?
 warps
 items, boss items
 savefile encryption?
-template option
 iwpo compatibility
 pause
 sample rooms

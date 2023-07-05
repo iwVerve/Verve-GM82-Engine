@@ -72,14 +72,18 @@ var _v_input, _option, _key;
 _v_input = input_check_pressed(key_menu_down) - input_check_pressed(key_menu_up);
 
 if state == state_options {
+    _option = ds_list_find_value(options_list, current_option);
+
     if _v_input != 0 {
+        script_execute(_option, "end");
+
         current_option = modwrap(current_option + _v_input, 0, ds_list_size(options_list));
         _option = ds_list_find_value(options_list, current_option);
         script_execute(_option, "init");
+
         sound_play("player_ground_jump");
     }
 
-    _option = ds_list_find_value(options_list, current_option);
     script_execute(_option, "step");
 
     if input_check_pressed(key_menu_back) {
