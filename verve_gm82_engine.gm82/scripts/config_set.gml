@@ -2,9 +2,9 @@
 
 // Sets a config value.
 
-var key, value;
+var _key, _value;
 
-key = argument0;
-value = argument1;
+_key = argument0;
+_value = argument1;
 
-ds_map_set(global.config_map, key, value);
+ds_map_set(global.config_map, _key, _value);

@@ -12,6 +12,7 @@ global.first_room = rSample;
 // Size of the game window
 global.game_width = 800;
 global.game_height = 608;
+global.game_speed = 50;
 
 // The location of all save data files.
 global.save_folder = "save\";

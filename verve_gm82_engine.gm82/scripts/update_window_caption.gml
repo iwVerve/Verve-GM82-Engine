@@ -2,12 +2,12 @@
 
 // Sets the window caption to show the deathtime.
 
-var caption;
+var _caption;
 
-caption = global.game_title;
+_caption = global.game_title;
 
 if is_in_game() {
-    caption += str_cat(
+    _caption += str_cat(
         " - Deaths: ",
         save_get("deaths"),
         " - Time: ",
@@ -15,4 +15,4 @@ if is_in_game() {
     );
 }
 
-room_caption = caption;
+room_caption = _caption;

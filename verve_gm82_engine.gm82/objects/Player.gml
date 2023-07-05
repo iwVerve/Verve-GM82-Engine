@@ -29,9 +29,7 @@ action_id=603
 applies_to=self
 */
 /// Movement
-var current_max_vspeed;
-
-
+var _current_max_vspeed;
 
 // Horizontal movement
 h_input = input_check(key_right);
@@ -48,15 +46,15 @@ else {
 }
 
 // Vertical movement
-current_max_vspeed = max_vspeed;
+_current_max_vspeed = max_vspeed;
 if place_meeting(x, y, Water) {
-    current_max_vspeed = 2;
+    _current_max_vspeed = 2;
     if place_meeting(x, y, WaterRefreshing) {
         air_jumps = max_air_jumps;
     }
 }
-if global.grav * vspeed > current_max_vspeed {
-    vspeed = global.grav * current_max_vspeed;
+if global.grav * vspeed > _current_max_vspeed {
+    vspeed = global.grav * _current_max_vspeed;
 }
 
 if on_floor {
@@ -89,15 +87,15 @@ action_id=603
 applies_to=self
 */
 /// Vines
-var on_vine_left, on_vine_right;
+var _on_vine_left, _on_vine_right;
 
-on_vine_left = place_meeting(x - 1, y, VineLeft);
-on_vine_right = place_meeting(x + 1, y, VineRight);
+_on_vine_left = place_meeting(x - 1, y, VineLeft);
+_on_vine_right = place_meeting(x + 1, y, VineRight);
 
-on_vine = on_vine_left || on_vine_right;
+on_vine = _on_vine_left || _on_vine_right;
 
 if on_vine {
-    if on_vine_right {
+    if _on_vine_right {
         x_scale = -1;
     }
     else {
@@ -106,7 +104,7 @@ if on_vine {
 
     vspeed = 2 * global.grav;
 
-    if (on_vine_left && input_check_pressed(key_right)) || (on_vine_right && input_check_pressed(key_left)) {
+    if (_on_vine_left && input_check_pressed(key_right)) || (_on_vine_right && input_check_pressed(key_left)) {
         if input_check(key_jump) {
             hspeed = 15;
             vspeed = -9 * global.grav;
@@ -116,7 +114,7 @@ if on_vine {
             hspeed = 3;
         }
 
-        if on_vine_right {
+        if _on_vine_right {
             hspeed *= -1;
         }
     }
@@ -127,7 +125,7 @@ action_id=603
 applies_to=self
 */
 /// Solid collision
-var dist, dir;
+var _dist, _dir;
 
 // Gravity will be added by the time the player moves, but it hasn't been yet.
 // We temporarily add it now to correct for this.
@@ -136,19 +134,19 @@ vspeed += gravity;
 if !place_free(x + hspeed, y + vspeed) {
     if !place_free(x + hspeed, y) {
         // Horizontal collision
-        dist = abs(hspeed);
-        dir = 180 * (hspeed < 0);
+        _dist = abs(hspeed);
+        _dir = 180 * (hspeed < 0);
         
-        move_contact_solid(dir, dist);
+        move_contact_solid(_dir, _dist);
         hspeed = 0;
     }
     
     if !place_free(x, y + vspeed) {
         // Vertical collision
-        dist = abs(vspeed);
-        dir = 90 + 180 * (vspeed > 0);
+        _dist = abs(vspeed);
+        _dir = 90 + 180 * (vspeed > 0);
         
-        move_contact_solid(dir, dist);
+        move_contact_solid(_dir, _dist);
         
         if global.grav * vspeed < 0 {
             player_hit_ceiling();
@@ -173,29 +171,30 @@ action_id=603
 applies_to=self
 */
 /// Platform collision
-var feet_y, platform_floor, upwards_platform_vspeed, downwards_platform_vspeed, landed_on_platform, jumped_out, yy, dir;
+var _feet_y, _platform_floor, _upwards_platform_vspeed, _downwards_platform_vspeed;
+var _landed_on_platform, _jumped_out, yy;
 
-feet_y = ternary(global.grav == 1, bbox_bottom, bbox_top);
+_feet_y = ternary(global.grav == 1, bbox_bottom, bbox_top);
 
 with(Platform) {
     if !place_meeting(x, y - global.grav, Player) {
         continue;
     }
 
-    platform_floor = ternary(global.grav == 1, bbox_top, bbox_bottom);
-    upwards_platform_vspeed = global.grav * min(global.grav * vspeed, 0);
-    downwards_platform_vspeed = global.grav * max(global.grav * vspeed, 0);
+    _platform_floor = ternary(global.grav == 1, bbox_top, bbox_bottom);
+    _upwards_platform_vspeed = global.grav * min(global.grav * vspeed, 0);
+    _downwards_platform_vspeed = global.grav * max(global.grav * vspeed, 0);
 
     // Whether the player was above the platform on the previous frame.
     // Since we are touching on this frame, we must have just landed if this is true.
-    landed_on_platform = global.grav * (feet_y - other.vspeed - global.grav) <= global.grav * (platform_floor - upwards_platform_vspeed);
+    _landed_on_platform = global.grav * (_feet_y - other.vspeed - global.grav) <= global.grav * (_platform_floor - _upwards_platform_vspeed);
     // Whether we are about to jump through the platform from below.
-    jumped_out = global.grav * (feet_y + other.vspeed) <= global.grav * (platform_floor + vspeed);
+    _jumped_out = global.grav * (_feet_y + other.vspeed) <= global.grav * (_platform_floor + vspeed);
 
-    if landed_on_platform || (jumped_out && snap) {
+    if _landed_on_platform || (_jumped_out && snap) {
         with(other) {
             // Target y position to snap to
-            yy = platform_floor + y - feet_y - global.grav;
+            yy = _platform_floor + y - _feet_y - global.grav;
 
             y = floor(yy);
             if other.hspeed != 0 {
@@ -207,7 +206,7 @@ with(Platform) {
                 }
             }
 
-            vspeed = downwards_platform_vspeed - gravity;
+            vspeed = _downwards_platform_vspeed - gravity;
             on_floor = true;
             air_jumps = max_air_jumps;
         }
@@ -270,16 +269,16 @@ action_id=603
 applies_to=self
 */
 ///Prevent some drawing issues
-var draw_x, draw_y;
+var _draw_x, _draw_y;
 
 // Round draw coordinates to prevent jitter.
-draw_x = floor(x + 0.5);
-draw_y = floor(y + 0.5);
+_draw_x = floor(x + 0.5);
+_draw_y = floor(y + 0.5);
 
 // Draw the player
-draw_sprite_ext(sprite_index, image_index, draw_x, draw_y, x_scale, image_yscale * global.grav, image_angle, image_blend, image_alpha);
+draw_sprite_ext(sprite_index, image_index, _draw_x, _draw_y, x_scale, image_yscale * global.grav, image_angle, image_blend, image_alpha);
 
 // Draw the bow
 if has_bow {
-    draw_sprite_ext(sprPlayerBow, image_index, draw_x, draw_y, x_scale, image_yscale * global.grav, image_angle, image_blend, image_alpha);
+    draw_sprite_ext(sprPlayerBow, image_index, _draw_x, _draw_y, x_scale, image_yscale * global.grav, image_angle, image_blend, image_alpha);
 }

@@ -7,6 +7,7 @@ if place_meeting(x, y, WaterRefreshing) {
 }
 else {
     air_jumps -= 1;
+    air_jumps = max(air_jumps, 0);
 }
 
 sound_play("player_air_jump");

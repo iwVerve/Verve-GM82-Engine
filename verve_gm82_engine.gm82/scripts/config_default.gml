@@ -4,11 +4,11 @@
 // This allows new config options to be added to save files from older versions.
 // The actual default values are set in config_init().
 
-var key, value;
+var _key, _value;
 
-key = argument0;
-value = argument1;
+_key = argument0;
+_value = argument1;
 
-if is_undefined(ds_map_get(global.config_map, key)) {
-    ds_map_set(global.config_map, key, value);
+if is_undefined(ds_map_get(global.config_map, _key)) {
+    ds_map_set(global.config_map, _key, _value);
 }

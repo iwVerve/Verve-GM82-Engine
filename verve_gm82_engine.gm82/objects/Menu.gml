@@ -25,15 +25,15 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-var h_input;
+var _h_input;
 
 save_select(current_file);
-h_input = input_check_pressed(key_menu_right) - input_check_pressed(key_menu_left);
+_h_input = input_check_pressed(key_menu_right) - input_check_pressed(key_menu_left);
 
 // Selecting a save file
 if state == state_not_selected {
-    if h_input != 0 {
-        current_file = modwrap(current_file + h_input, 0, file_count);
+    if _h_input != 0 {
+        current_file = modwrap(current_file + _h_input, 0, file_count);
         sound_play("player_ground_jump");
     }
     save_select(current_file);
@@ -54,7 +54,7 @@ if state == state_not_selected {
 
 // Selecting a difficulty
 else if state == state_difficulty {
-    current_difficulty = modwrap(current_difficulty + h_input, ternary(save_get("exists"), -1, 0), 4);
+    current_difficulty = modwrap(current_difficulty + _h_input, ternary(save_get("exists"), -1, 0), 4);
 
     if input_check_pressed(key_menu_accept) {
         if current_difficulty == -1 {
@@ -77,7 +77,7 @@ else if state == state_difficulty {
 
 // Confirming overwrite
 else if state == state_overwrite {
-    current_overwrite = modwrap(current_overwrite + h_input, 0, 2);
+    current_overwrite = modwrap(current_overwrite + _h_input, 0, 2);
 
     if input_check_pressed(key_menu_accept) {
         if current_overwrite == 0 {

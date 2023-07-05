@@ -2,10 +2,10 @@
 
 // Reads the saved game options from disk.
 
-var file;
+var _file;
 
 if file_exists(global.config_file) {
-    file = file_text_open_read(global.config_file);
-    ds_map_read(global.config_map, file_text_read_string(file));
-    file_text_close(file);
+    _file = file_text_open_read(global.config_file);
+    ds_map_read(global.config_map, file_text_read_string(_file));
+    file_text_close(_file);
 }

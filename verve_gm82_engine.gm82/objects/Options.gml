@@ -4,7 +4,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-var i, option;
+var i, _option;
 
 // State
 state_options = 0;
@@ -16,17 +16,17 @@ options_list = ds_list_create();
 current_option = 0;
 
 for(i = 0; i < ds_list_size(global.options_list); i += 1) {
-    option = ds_list_find_value(global.options_list, i);
+    _option = ds_list_find_value(global.options_list, i);
 
-    if !script_execute(option, "include") {
+    if !script_execute(_option, "include") {
         continue;
     }
 
-    if is_in_game() && !script_execute(option, "in_pause") {
+    if is_in_game() && !script_execute(_option, "in_pause") {
         continue;
     }
 
-    ds_list_add(options_list, option);
+    ds_list_add(options_list, _option);
 }
 
 volume_option_timer = 0;
@@ -67,20 +67,20 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-var v_input, option, key;
+var _v_input, _option, _key;
 
-v_input = input_check_pressed(key_menu_down) - input_check_pressed(key_menu_up);
+_v_input = input_check_pressed(key_menu_down) - input_check_pressed(key_menu_up);
 
 if state == state_options {
-    if v_input != 0 {
-        current_option = modwrap(current_option + v_input, 0, ds_list_size(options_list));
-        option = ds_list_find_value(options_list, current_option);
-        script_execute(option, "init");
+    if _v_input != 0 {
+        current_option = modwrap(current_option + _v_input, 0, ds_list_size(options_list));
+        _option = ds_list_find_value(options_list, current_option);
+        script_execute(_option, "init");
         sound_play("player_ground_jump");
     }
 
-    option = ds_list_find_value(options_list, current_option);
-    script_execute(option, "step");
+    _option = ds_list_find_value(options_list, current_option);
+    script_execute(_option, "step");
 
     if input_check_pressed(key_menu_back) {
         room_goto(rMenu);
@@ -88,8 +88,8 @@ if state == state_options {
 }
 else if state == state_keyboard_controls {
     if !is_rebinding {
-        if v_input != 0 {
-            current_key = modwrap(current_key + v_input, 0, ds_list_size(global.input_rebindable_list) + 1);
+        if _v_input != 0 {
+            current_key = modwrap(current_key + _v_input, 0, ds_list_size(global.input_rebindable_list) + 1);
             sound_play("player_ground_jump");
         }
 
@@ -111,14 +111,13 @@ else if state == state_keyboard_controls {
     else {
         // Wait for new bind
         if keyboard_check_pressed(vk_anykey) {
-            key = keyboard_key;
+            _key = keyboard_key;
 
-            if key == 160 || key == 161 {
-                key = vk_shift;
+            if _key == 160 || _key == 161 {
+                _key = vk_shift;
             }
 
-            ds_map_set(global.input_keyboard_map, ds_list_find_value(global.input_rebindable_list, current_key), key);
-            //input_set_key(ds_map_get(global.input_rebindable_list, current_key), key);
+            input_set_key(ds_list_find_value(global.input_rebindable_list, current_key), _key);
             is_rebinding = false;
         }
     }
@@ -152,7 +151,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-var i, yy, option, text, input, reset_row, row_name, row_value;
+var i, yy, _option, _input, _row_name, _row_value;
 
 draw_set_font(fDefaultLarge);
 draw_set_valign(fa_middle);
@@ -162,15 +161,15 @@ if state == state_options {
     draw_set_font(options_font);
 
     for(i = 0; i < ds_list_size(options_list); i += 1) {
-        option = ds_list_find_value(options_list, i);
+        _option = ds_list_find_value(options_list, i);
 
-        row_name = script_execute(option, "name");
-        row_value = script_execute(option, "value");
+        _row_name = script_execute(_option, "name");
+        _row_value = script_execute(_option, "value");
 
         draw_set_halign(fa_left);
-        draw_text_outlined(options_x_margin, yy, row_name, c_white, c_black, 2);
+        draw_text_outlined(options_x_margin, yy, _row_name, c_white, c_black, 2);
         draw_set_halign(fa_right);
-        draw_text_outlined(global.game_width - options_x_margin, yy, row_value, c_white, c_black, 2);
+        draw_text_outlined(global.game_width - options_x_margin, yy, _row_value, c_white, c_black, 2);
 
         yy += options_y_step;
     }
@@ -183,25 +182,25 @@ else if state == state_keyboard_controls {
 
     for(i = 0; i < ds_list_size(global.input_rebindable_list) + 1; i += 1) {
         if i < ds_list_size(global.input_rebindable_list) {
-            input = ds_list_find_value(global.input_rebindable_list, i);
-            row_name = input_get_name(input);
+            _input = ds_list_find_value(global.input_rebindable_list, i);
+            _row_name = input_get_name(_input);
 
             if !is_rebinding || i != current_key {
-                row_value = key_get_name(input_get_key(input));
+                _row_value = key_get_name(input_get_key(_input));
             }
             else {
-                row_value = "Press new key";
+                _row_value = "Press new key";
             }
         }
         else {
-            row_name = "Reset Controls";
-            row_value = "";
+            _row_name = "Reset Controls";
+            _row_value = "";
         }
 
         draw_set_halign(fa_left);
-        draw_text_outlined(keyboard_x_margin, yy, row_name, c_white, c_black, 2);
+        draw_text_outlined(keyboard_x_margin, yy, _row_name, c_white, c_black, 2);
         draw_set_halign(fa_right);
-        draw_text_outlined(global.game_width - keyboard_x_margin, yy, row_value, c_white, c_black, 2);
+        draw_text_outlined(global.game_width - keyboard_x_margin, yy, _row_value, c_white, c_black, 2);
 
         yy += keyboard_y_step;
     }

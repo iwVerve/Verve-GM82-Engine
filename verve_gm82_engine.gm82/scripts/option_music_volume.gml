@@ -1,5 +1,5 @@
 ///option_music_volume(type)
-var h_input;
+var _h_input;
 
 switch(argument0) {
 
@@ -14,11 +14,11 @@ switch(argument0) {
         break;
 
     case "step":
-        h_input = input_check(key_menu_right) - input_check(key_menu_left);
+        _h_input = input_check(key_menu_right) - input_check(key_menu_left);
 
-        if h_input != 0 {
+        if _h_input != 0 {
             if volume_option_timer mod volume_option_period == 0 || volume_option_timer > volume_option_delay {
-                config_set("music_volume", clamp(config_get("music_volume") + h_input, 0, 100));
+                config_set("music_volume", clamp(config_get("music_volume") + _h_input, 0, 100));
                 sound_set_music_volume(config_get("music_volume") / 100);
             }
             volume_option_timer += 1;

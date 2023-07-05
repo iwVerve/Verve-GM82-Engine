@@ -1,30 +1,30 @@
 ///get_formatted_time(seconds, [format=0])
-var total_seconds, format, str, hours, minutes, seconds;
+var _total_seconds, _format, _hours, _minutes, _seconds;
 
-total_seconds = argument[0];
-format = 0;
+_total_seconds = argument[0];
+_format = 0;
 if argument_count > 1 {
-    format = argument[1];
+    _format = argument[1];
 }
 
 //hh:mm:ss
-if format == 0 {
-    total_seconds = floor(total_seconds);
+if _format == 0 {
+    _total_seconds = floor(_total_seconds);
 
-    hours = string(floor(total_seconds / 3600));
-    if string_length(hours) < 2 {
-        hours = "0" + hours;
+    _hours = string(floor(_total_seconds / 3600));
+    if string_length(_hours) < 2 {
+        _hours = "0" + _hours;
     }
 
-    minutes = string(floor((total_seconds mod 3600) / 60));
-    if string_length(minutes) < 2 {
-        minutes = "0" + minutes;
+    _minutes = string(floor((_total_seconds mod 3600) / 60));
+    if string_length(_minutes) < 2 {
+        _minutes = "0" + _minutes;
     }
 
-    seconds = string(floor(total_seconds mod 60));
-    if string_length(seconds) < 2 {
-        seconds = "0" + seconds;
+    _seconds = string(floor(_total_seconds mod 60));
+    if string_length(_seconds) < 2 {
+        _seconds = "0" + _seconds;
     }
 
-    return str_cat(hours, ":", minutes, ":", seconds);
+    return str_cat(_hours, ":", _minutes, ":", _seconds);
 }
