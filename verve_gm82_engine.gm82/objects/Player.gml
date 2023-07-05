@@ -8,12 +8,13 @@ applies_to=self
 ground_jump_speed = 8.5;
 air_jump_speed = 7;
 jump_release_multiplier = 0.45;
-gravity = 0.4 * global.grav;
+grav = 0.4;
 max_air_jumps = 1;
 max_vspeed = 9;
 run_speed = 3;
 
 // State
+gravity = grav * global.grav;
 air_jumps = max_air_jumps;
 h_input = 0;
 x_scale = 1;
@@ -47,7 +48,7 @@ else {
 
 // Vertical movement
 _current_max_vspeed = max_vspeed;
-if place_meeting(x, y, Water) {
+if place_meeting(x, y, WaterCatharsis) {
     _current_max_vspeed = 2;
     if place_meeting(x, y, WaterRefreshing) {
         air_jumps = max_air_jumps;
@@ -62,6 +63,8 @@ if on_floor {
         on_floor = false;
     }
 }
+
+gravity = global.grav * grav;
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603

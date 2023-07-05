@@ -46,6 +46,7 @@
 	|sprWater
 	|sprWaterRefreshing
 	|sprWaterGroundJump
+	|sprWaterCatharsis
 	|sprVineLeft
 	|sprVineRight
 	|sprJumpRefresher

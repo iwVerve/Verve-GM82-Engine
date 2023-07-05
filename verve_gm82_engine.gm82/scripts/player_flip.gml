@@ -9,7 +9,7 @@ global.grav *= -1;
 with(Player) {
     air_jumps = max_air_jumps;
     vspeed = 0;
-    gravity = global.grav * abs(gravity);
+    gravity = global.grav * grav;
 
     player_set_mask();
     y += 4 * global.grav;
