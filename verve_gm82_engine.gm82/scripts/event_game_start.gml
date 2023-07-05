@@ -19,6 +19,8 @@ render_init();
 global.grav = 1;
 global.close_button_pressed = false;
 
+unmuted_music_volume = config_get("music_volume");
+
 set_room_views();
 io_set_roomend_clear(false);
 

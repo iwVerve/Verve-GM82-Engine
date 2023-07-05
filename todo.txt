@@ -4,7 +4,6 @@ savefile items/clear
 controller support
 moving solids
 triggers
-save blockers
 music
 slopes
 ice, conveyors
@@ -14,7 +13,6 @@ cherry colors?
 sign
 warps
 items, boss items
-f5, ctrl+m
 savefile encryption?
 template option
 iwpo compatibility
