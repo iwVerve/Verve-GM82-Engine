@@ -21,6 +21,16 @@ applies_to=self
 
 // Code moved to script to allow multiple code windows open.
 event_world_step();
+#define Step_2
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+///event_world_step()
+
+// Code moved to script to allow multiple code windows open.
+event_world_end_step();
 #define Other_2
 /*"/*'/**//* YYD ACTION
 lib_id=1

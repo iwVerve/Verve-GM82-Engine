@@ -73,3 +73,8 @@ music_play_room_bgm
 debug_hotkeys
 draw_pause_screen
 restart_game
+camera_update
+game_hotkeys
+event_world_end_step
+camera_init
+camera_snap

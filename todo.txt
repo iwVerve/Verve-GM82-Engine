@@ -2,7 +2,6 @@ controller support
 moving solids
 triggers
 slopes
-camera
 iwpo compatibility
 sample rooms
 fields

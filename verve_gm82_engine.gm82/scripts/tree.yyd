@@ -3,9 +3,38 @@
 	|update_window_caption
 	|set_room_views
 	|is_in_game
+	|game_hotkeys
 	|debug_hotkeys
 	|draw_pause_screen
 	|restart_game
+	+Camera
+		|camera_init
+		|camera_update
+		|camera_snap
+	+Input
+		|input_init
+		|input_define
+		|input_get_key
+		|input_set_key
+		|input_get_name
+		|input_check
+		|input_check_pressed
+		|input_check_released
+		|input_write
+		|input_read
+		|input_reset_keys
+	+Save
+		|save_init
+		|save_set
+		|save_set_persistent
+		|save_get
+		|save_save
+		|save_load
+		|save_write
+		|save_read
+		|save_default
+		|save_select
+		|save_new_game
 	+Render
 		|render_init
 		|render_compose
@@ -14,6 +43,7 @@
 	|event_game_start
 	|event_room_start
 	|event_world_step
+	|event_world_end_step
 +Player
 	|player_try_jump
 	|player_ground_jump
@@ -33,48 +63,24 @@
 	|music_stop
 	|sound_set_sound_volume
 	|sound_set_music_volume
-+Input
-	|input_init
-	|input_define
-	|input_get_key
-	|input_set_key
-	|input_get_name
-	|input_check
-	|input_check_pressed
-	|input_check_released
-	|input_write
-	|input_read
-	|input_reset_keys
-+Save
-	|save_init
-	|save_set
-	|save_set_persistent
-	|save_get
-	|save_save
-	|save_load
-	|save_write
-	|save_read
-	|save_default
-	|save_select
-	|save_new_game
-+Options
-	|config_init
-	|config_get
-	|config_set
-	|config_default
-	|config_write
-	|config_read
-	+Options
-		|option_list
-		|option_template
-		|option_music_volume
-		|option_sound_volume
-		|option_fullscreen
-		|option_smoothing
-		|option_keyboard
 +Menu
 	|menu_draw_savefile
 	|menu_draw_navigation
+	+Options
+		|config_init
+		|config_get
+		|config_set
+		|config_default
+		|config_write
+		|config_read
+		+Options
+			|option_list
+			|option_template
+			|option_music_volume
+			|option_sound_volume
+			|option_fullscreen
+			|option_smoothing
+			|option_keyboard
 +Utility
 	|draw_text_outlined
 	|key_get_name

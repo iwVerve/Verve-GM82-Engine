@@ -13,7 +13,7 @@ else {
     _target_height = global.game_height;
 }
 
-if  global.render_width != _target_width || global.render_height != _target_height {
+if global.render_width != _target_width || global.render_height != _target_height {
     global.render_width = _target_width;
     global.render_height = _target_height;
     window_resize_buffer(global.render_width, global.render_height);
