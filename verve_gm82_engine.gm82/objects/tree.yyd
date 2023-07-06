@@ -51,3 +51,7 @@
 +Warps
 	|RoomChanger
 	|Warp
++Items
+	|Item
+	|BossItem
+	|GameClear

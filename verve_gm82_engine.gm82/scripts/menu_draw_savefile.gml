@@ -46,6 +46,20 @@ else {
 draw_set_halign(fa_middle);
 draw_text(xx + 64, yy + 49, _top_text);
 
+for(i = 0; i < 4; i += 1) {
+    if save_get(str_cat("item", i)) {
+        draw_sprite(sprItem, 0, xx + 32 * i, yy + 128);
+    }
+    if save_get(str_cat("boss_item", i)) {
+        draw_sprite(sprBossItem, 0, xx + 32 * i, yy + 160);
+    }
+}
+
+if save_get("clear") {
+    draw_set_font(fDefaultBig);
+    draw_text(xx + 65, yy + 215, "Clear!");
+}
+
 if _selected {
     // Draw selection "cursor".
     for(i = 0; i < 7; i += 1) {

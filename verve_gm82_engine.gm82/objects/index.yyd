@@ -48,3 +48,6 @@ Warp
 IceBlock
 ConveyorLeft
 ConveyorRight
+GameClear
+Item
+BossItem

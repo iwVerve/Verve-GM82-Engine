@@ -75,3 +75,6 @@
 	|sprWarp
 +Triggers
 	|sprTriggerMask
++Items
+	|sprItem
+	|sprBossItem

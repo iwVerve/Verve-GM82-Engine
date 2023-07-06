@@ -97,7 +97,9 @@ if is_in_game() && !global.paused {
         save_load();
     }
 
-    save_set_persistent("time", save_get("time") + 1 / room_speed);
+    if (!global.time_when_dead || instance_exists(Player)) && (global.time_when_clear || !save_get("clear")) {
+        save_set_persistent("time", save_get("time") + 1 / room_speed);
+    }
     debug_hotkeys();
 }
 

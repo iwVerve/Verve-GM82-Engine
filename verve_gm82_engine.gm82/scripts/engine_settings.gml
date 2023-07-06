@@ -15,12 +15,10 @@ global.game_width = 800;
 global.game_height = 608;
 global.game_speed = 50;
 
-// The location of all save data files.
-global.save_folder = "save\";
-// Modifies the volume of everything. Recommended to keep below 0.7.
-global.sound_gain = 0.7;
-
 global.killer_room_border = true;
+global.time_when_dead = false;
+global.time_when_clear = false;
+global.autosave_items = false;
 
 global.difficulty_count = 4;
 global.difficulty_names[0] = "Load Game";
@@ -28,3 +26,8 @@ global.difficulty_names[1] = "Medium";
 global.difficulty_names[2] = "Hard";
 global.difficulty_names[3] = "Very Hard";
 global.difficulty_names[4] = "Impossible";
+
+// The location of all save data files.
+global.save_folder = "save\";
+// Modifies the volume of everything. Recommended to keep below 0.7.
+global.sound_gain = 0.7;
