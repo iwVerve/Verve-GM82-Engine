@@ -140,6 +140,8 @@ if on_vine {
         if _on_vine_right {
             hspeed *= -1;
         }
+
+        on_vine = false;
     }
 }
 /*"/*'/**//* YYD ACTION

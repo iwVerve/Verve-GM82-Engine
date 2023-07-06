@@ -51,10 +51,14 @@ global.close_button_pressed = true;
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1
-action_id=605
-invert=0
-arg0=Don't draw
+action_id=603
+applies_to=self
 */
+var _pause_surf;
+
+if global.paused {
+    draw_pause_screen();
+}
 #define Trigger_Draw GUI
 /*"/*'/**//* YYD ACTION
 lib_id=1

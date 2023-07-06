@@ -24,6 +24,8 @@ global.debug_infinite_jump = false;
 global.debug_show_mask = false;
 global.debug_overlay = 0;
 
+global.paused = false;
+
 unmuted_music_volume = config_get("music_volume");
 
 set_room_views();

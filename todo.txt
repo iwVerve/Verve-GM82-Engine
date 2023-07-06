@@ -7,7 +7,6 @@ camera
 items, boss items
 savefile encryption?
 iwpo compatibility
-pause
 sample rooms
 fields
 documentation

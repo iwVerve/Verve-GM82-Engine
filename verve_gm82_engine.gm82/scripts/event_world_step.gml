@@ -1,4 +1,44 @@
 ///event_world_step()
+var _pause_surf;
+
+// Pause game
+if !global.paused {
+    if input_check_pressed(key_pause) if is_in_game() {
+        _pause_surf = surface_get("pause_surf", global.game_width, global.game_height);
+        surface_copy(_pause_surf, 0, 0, application_surface);
+
+        surface_set_target(_pause_surf);
+            draw_set_blend_mode(bm_add);
+                draw_set_color(c_black);
+                draw_rectangle(0, 0, global.game_width, global.game_height, false);
+            draw_set_blend_mode(bm_normal);
+        surface_reset_target();
+
+        instance_deactivate_all(true);
+        instance_activate_object(core);
+        instance_activate_object(__gm82dx9_controller);
+
+        global.paused = true;
+    }
+}
+else {
+    if input_check_pressed(key_menu_options) {
+        if !instance_exists(Options) {
+            with(instance_create(0, 0, Options)) {
+                visible = false;
+            }
+        }
+        else {
+            instance_destroy_id(Options);
+        }
+    }
+
+    if input_check_pressed(key_pause) {
+        instance_activate_all();
+        instance_destroy_id(Options);
+        global.paused = false;
+    }
+}
 
 // Close game
 if keyboard_check_pressed(vk_escape) || global.close_button_pressed {
@@ -6,14 +46,14 @@ if keyboard_check_pressed(vk_escape) || global.close_button_pressed {
         game_end();
     }
     else {
-        room_goto(rTitle);
+        restart_game();
         global.close_button_pressed = false;
     }
 }
 
 // Restart game
 if keyboard_check_pressed(vk_f2) {
-    room_goto(rTitle);
+    restart_game();
 }
 
 // Fullscreen
@@ -52,14 +92,14 @@ if keyboard_check(vk_control) && keyboard_check_pressed(ord("M")) {
     }
 }
 
-if is_in_game() {
+if is_in_game() && !global.paused {
     if input_check_pressed(key_restart) {
         save_load();
     }
 
     save_set_persistent("time", save_get("time") + 1 / room_speed);
+    debug_hotkeys();
 }
 
 update_window_caption();
 render_update();
-debug_hotkeys();

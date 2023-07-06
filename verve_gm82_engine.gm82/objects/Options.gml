@@ -87,7 +87,12 @@ if state == state_options {
     script_execute(_option, "step");
 
     if input_check_pressed(key_menu_back) {
-        room_goto(rMenu);
+        if !is_in_game() {
+            room_goto(rMenu);
+        }
+        else {
+            instance_destroy();
+        }
     }
 }
 else if state == state_keyboard_controls {
