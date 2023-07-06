@@ -3,7 +3,6 @@ moving solids
 triggers
 slopes
 camera
-savefile encryption?
 iwpo compatibility
 sample rooms
 fields
