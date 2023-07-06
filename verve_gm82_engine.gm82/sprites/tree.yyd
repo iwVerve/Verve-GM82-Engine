@@ -28,6 +28,12 @@
 	|sprConveyorRight
 	|sprPlatform
 	|sprSaveBlocker
+	+Slopes
+		|sprSlope
+		|sprSlopeTopRight
+		|sprSlopeBottomRight
+		|sprSlopeTopLeft
+		|sprSlopeBottomLeft
 +Killers
 	|sprSpikeUp
 	|sprSpikeRight

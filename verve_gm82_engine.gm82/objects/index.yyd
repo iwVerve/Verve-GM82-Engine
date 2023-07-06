@@ -51,3 +51,8 @@ ConveyorRight
 GameClear
 Item
 BossItem
+Slope
+SlopeTopRight
+SlopeBottomRight
+SlopeTopLeft
+SlopeBottomLeft

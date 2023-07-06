@@ -19,6 +19,12 @@
 	|ConveyorRight
 	|Platform
 	|SaveBlocker
+	+Slopes
+		|Slope
+		|SlopeTopRight
+		|SlopeBottomRight
+		|SlopeTopLeft
+		|SlopeBottomLeft
 +Killers
 	|PlayerKiller
 	|SpikeUp

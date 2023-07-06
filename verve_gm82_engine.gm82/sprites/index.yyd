@@ -69,3 +69,8 @@ sprConveyorLeft
 sprConveyorRight
 sprItem
 sprBossItem
+sprSlope
+sprSlopeTopRight
+sprSlopeBottomRight
+sprSlopeTopLeft
+sprSlopeBottomLeft

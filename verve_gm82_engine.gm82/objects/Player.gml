@@ -149,6 +149,59 @@ lib_id=1
 action_id=603
 applies_to=self
 */
+/// Slope collision
+var _landed, _sign, _was_on_slope, _is_going_into_slope, _store_y;
+
+_landed = false;
+_sign = esign(vspeed + gravity, global.grav);
+_was_on_slope = false;
+_is_going_into_slope = false;
+
+if _sign == global.grav {
+    _was_on_slope = place_meeting(x, y + 2 * global.grav, Slope);
+    if !_was_on_slope {
+        _is_going_into_slope = place_meeting(x + hspeed, y + 2 * global.grav, Slope);
+    }
+    if _was_on_slope || _is_going_into_slope {
+        x += hspeed;
+
+        if place_free(x, y) {
+            if _was_on_slope if !place_free(x, y + 8 * global.grav) {
+                while(place_free(x, y + global.grav)) {
+                    _store_y = round(y);
+                    do {
+                        y += gravity;
+                    }
+                    until round(y) != _store_y;
+                }
+                y -= gravity;
+                _landed = true;
+            }
+        }
+        else {
+            _store_y = y;
+            move_outside_solid(180 - 90 * global.grav, abs(6));
+            if !place_free(x, y) {
+                y = _store_y;
+            }
+            else {
+                y -= gravity;
+                _landed = true;
+            }
+        }
+
+        x -= hspeed;
+    }
+}
+
+if _landed {
+    player_land();
+}
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
 /// Solid collision
 var _dist, _dir;
 
