@@ -78,3 +78,5 @@ game_hotkeys
 event_world_end_step
 camera_init
 camera_snap
+savedata_save
+savedata_load

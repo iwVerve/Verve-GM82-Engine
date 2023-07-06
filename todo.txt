@@ -1,7 +1,6 @@
 controller support
-moving solids
 triggers
-iwpo compatibility
+moving solids
 sample rooms
 fields
 documentation

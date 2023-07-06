@@ -82,6 +82,9 @@
 			|option_smoothing
 			|option_keyboard
 +Utility
+	+IWPO Compatibility
+		|savedata_save
+		|savedata_load
 	|draw_text_outlined
 	|key_get_name
 	|ternary
