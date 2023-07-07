@@ -23,6 +23,13 @@ else {
         display_text = true;
     }
 }
+#define Other_4
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+//field text: string
 #define Draw_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

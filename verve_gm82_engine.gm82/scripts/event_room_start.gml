@@ -6,5 +6,7 @@ if !instance_exists(MusicPlayer) {
     music_play_room_bgm();
 }
 
+ds_map_clear(global.trigger_map);
+
 camera_update();
 camera_snap();

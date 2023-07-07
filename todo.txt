@@ -1,7 +1,6 @@
-controller support
 triggers
 moving solids
 sample rooms
-fields
+controller support?
 documentation
 readme

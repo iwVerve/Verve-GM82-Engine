@@ -7,8 +7,12 @@ applies_to=self
 room_to = noone;
 x_to = noone;
 y_to = noone;
-outside = false;
-wrap_around = false;
+
+type_normal = 0;
+type_outside = 1;
+type_wrap_around = 2;
+type = type_normal;
+
 x_offset = 0;
 y_offset = 0;
 #define Collision_Player
@@ -17,9 +21,21 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-if !outside && !wrap_around {
+if type == type_normal {
     event_user(0);
 }
+#define Other_4
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+//field room_to: room
+//field x_to: number
+//field y_to: number
+//field type: enum(type_normal,type_outside,type_wrap_around)
+//field x_offset: number
+//field y_offset: number
 #define Other_10
 /*"/*'/**//* YYD ACTION
 lib_id=1

@@ -80,3 +80,6 @@ camera_init
 camera_snap
 savedata_save
 savedata_load
+
+trigger_init
+camera_default

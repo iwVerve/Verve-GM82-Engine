@@ -11,6 +11,7 @@ config_init();
 input_init();
 sound_init();
 camera_init();
+trigger_init();
 render_init();
 
 global.grav = 1;

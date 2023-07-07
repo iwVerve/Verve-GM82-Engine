@@ -4,6 +4,7 @@
 	|Menu
 	|Options
 	|MusicPlayer
+	|Camera
 +Player
 	|PlayerStart
 	|Player
@@ -54,6 +55,8 @@
 	|GravityUp
 	|GravityDown
 	|Sign
++Triggers
+	|Trigger
 +Warps
 	|RoomChanger
 	|Warp

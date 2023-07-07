@@ -1,3 +1,5 @@
 //gm82 fields begin
-room_to=rSample02
+trigger=a
 //gm82 fields end
+
+visible = true;
