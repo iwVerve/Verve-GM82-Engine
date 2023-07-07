@@ -44,7 +44,7 @@ applies_to=self
 */
 /// Warp
 
-if wrap_around {
+if type == type_wrap_around {
     if x < 0 {
         Player.x += room_width;
     }

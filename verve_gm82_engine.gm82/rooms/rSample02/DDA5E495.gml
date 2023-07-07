@@ -1,5 +1,3 @@
 //gm82 fields begin
-trigger=a
+trigger="a"
 //gm82 fields end
-
-visible = true;

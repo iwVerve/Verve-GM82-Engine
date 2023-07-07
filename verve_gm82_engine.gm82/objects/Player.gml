@@ -305,7 +305,7 @@ if place_meeting(x, y, PlayerKiller) {
 if global.killer_room_border if bbox_right < 0 || bbox_left >= room_width || bbox_bottom < 0 || bbox_top >= room_height {
     _warp = noone;
     with(RoomChanger) {
-        if outside || wrap_around if place_meeting(x, y, Player) {
+        if type == type_outside || type == type_wrap_around if place_meeting(x, y, Player) {
             _warp = id;
         }
     }
