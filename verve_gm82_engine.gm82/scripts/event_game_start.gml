@@ -2,6 +2,8 @@
 
 // The main initialization script.
 
+var _object;
+
 engine_settings();
 
 directory_create(working_directory + "\" + global.save_folder);
@@ -28,5 +30,10 @@ unmuted_music_volume = config_get("music_volume");
 
 set_room_views();
 io_set_roomend_clear(false);
+
+_object = object_add();
+object_set_persistent(_object, true);
+object_event_add(_object, ev_step, ev_step_end, "event_late_step()");
+instance_create(0, 0, _object);
 
 room_goto_next();

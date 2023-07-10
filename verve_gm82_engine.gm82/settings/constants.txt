@@ -16,3 +16,7 @@ key_menu_accept=14
 key_menu_back=15
 key_menu_options=16
 lf=chr(13) + chr(10)
+ease_none=0
+ease_quad_in=1
+ease_quad_out=2
+ease_quad_inout=3

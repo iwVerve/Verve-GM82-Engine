@@ -57,6 +57,7 @@
 	|Sign
 +Triggers
 	|Trigger
+	|TriggerManager
 +Warps
 	|RoomChanger
 	|Warp

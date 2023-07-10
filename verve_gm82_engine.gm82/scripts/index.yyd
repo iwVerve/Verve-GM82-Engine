@@ -83,3 +83,9 @@ savedata_load
 
 trigger_init
 camera_default
+trg_move
+trigger_make
+event_late_step
+trg_move_to
+trg_move_dir
+ease_value

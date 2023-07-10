@@ -45,6 +45,7 @@
 	|event_room_start
 	|event_world_step
 	|event_world_end_step
+	|event_late_step
 +Player
 	|player_try_jump
 	|player_ground_jump
@@ -66,6 +67,10 @@
 	|sound_set_music_volume
 +Trigger
 	|trigger_init
+	|trigger_make
+	|trg_move
+	|trg_move_dir
+	|trg_move_to
 +Menu
 	|menu_draw_savefile
 	|menu_draw_navigation
@@ -92,3 +97,4 @@
 	|key_get_name
 	|ternary
 	|get_formatted_time
+	|ease_value
