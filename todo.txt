@@ -1,4 +1,3 @@
-triggers
 moving solids
 sample rooms
 controller support?
