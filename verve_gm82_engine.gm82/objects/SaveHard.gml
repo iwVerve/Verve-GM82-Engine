@@ -36,7 +36,7 @@ if place_meeting(x, y, Bullet) {
 }
 
 if input_check_pressed(key_shoot) {
-    if place_meeting(x, y, Player) {
+    if place_meeting(x, y, Player) if !Player.frozen {
         event_user(0);
     }
 }

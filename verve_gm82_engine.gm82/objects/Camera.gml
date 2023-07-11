@@ -26,6 +26,9 @@ if !init {
     global.camera_leave_room = leave_room;
     global.camera_screen_lock = screen_lock;
 
+    camera_update();
+    camera_snap();
+
     init = true;
 }
 #define Other_4
@@ -36,7 +39,7 @@ applies_to=self
 */
 /*desc
 Sets camera settings for the current room. Any unset value
-will default to the value set in camera_default().
+will default to the value set in engine_settings().
 */
 //field enabled: bool
 //field width: number

@@ -14,6 +14,7 @@ max_vspeed = 9;
 run_speed = 3;
 
 // State
+frozen = false;
 gravity = grav * global.grav;
 air_jumps = max_air_jumps;
 h_input = 0;
@@ -21,6 +22,11 @@ x_scale = 1;
 has_bow = (save_get("difficulty") == 0);
 on_floor = false;
 on_vine = false;
+
+if global.save_autosave {
+    save_save();
+    global.save_autosave = false;
+}
 
 player_set_mask();
 #define Step_0
@@ -35,9 +41,12 @@ var _current_max_vspeed, _ice, _conveyor;
 _ice = instance_place(x, y + global.grav, IceBlock);
 
 // Horizontal movement
-h_input = input_check(key_right);
-if h_input == 0 {
-    h_input = -input_check(key_left);
+h_input = 0;
+if !frozen {
+    h_input = input_check(key_right);
+    if h_input == 0 {
+        h_input = -input_check(key_left);
+    }
 }
 
 if h_input != 0 {
@@ -92,17 +101,19 @@ applies_to=self
 */
 /// Actions
 
-if input_check_pressed(key_jump) {
-    player_try_jump();
-}
-if input_check_released(key_jump) {
-    player_release_jump();
-}
-if input_check_pressed(key_shoot) {
-    player_shoot();
-}
-if input_check_pressed(key_suicide) {
-    player_kill();
+if !frozen {
+    if input_check_pressed(key_jump) {
+        player_try_jump();
+    }
+    if input_check_released(key_jump) {
+        player_release_jump();
+    }
+    if input_check_pressed(key_shoot) {
+        player_shoot();
+    }
+    if input_check_pressed(key_suicide) {
+        player_kill();
+    }
 }
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -250,7 +261,7 @@ applies_to=self
 */
 /// Platform collision
 var _feet_y, _platform_floor, _upwards_platform_vspeed, _downwards_platform_vspeed;
-var _landed_on_platform, _jumped_out, yy;
+var _landed_on_platform, _jumped_out, yy, _dir;
 
 with(Platform) {
     if !place_meeting(x, y - global.grav, Player) {
@@ -271,9 +282,20 @@ with(Platform) {
     if _landed_on_platform || (_jumped_out && snap) {
         with(other) {
             // Target y position to snap to
-            yy = _platform_floor + y - _feet_y - global.grav;
+            yy = floor(_platform_floor + y - _feet_y - global.grav);
 
-            y = floor(yy);
+            if global.strong_platforms {
+                y = yy;
+            }
+            else {
+                if place_free(x, yy) {
+                    y = yy;
+                }
+                else {
+                    _dir = 90 + 180 * (yy > y);
+                    move_contact_solid(_dir, abs(yy - y));
+                }
+            }
             if other.hspeed != 0 {
                 if !place_free(x + other.hspeed, y) {
                     move_contact_solid(180 * (other.hspeed < 0), abs(other.hspeed));
