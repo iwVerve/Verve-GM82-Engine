@@ -1,5 +1,7 @@
 moving solids
+move/add to engine_settings
 sample rooms
 controller support?
+resave to flush unused stuff
 documentation
 readme
