@@ -57,6 +57,7 @@
 	|player_kill
 	|player_flip
 	|player_set_mask
+	|player_check_crush
 +Music
 	|sound_init
 	|music_get_room_bgm

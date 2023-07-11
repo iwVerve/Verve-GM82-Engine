@@ -14,6 +14,7 @@
 	|GameOver
 +Blocks
 	|Block
+	|BlockMoving
 	|BlockMini
 	|IceBlock
 	|ConveyorLeft

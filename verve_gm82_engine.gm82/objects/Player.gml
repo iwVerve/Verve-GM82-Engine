@@ -252,13 +252,12 @@ applies_to=self
 var _feet_y, _platform_floor, _upwards_platform_vspeed, _downwards_platform_vspeed;
 var _landed_on_platform, _jumped_out, yy;
 
-_feet_y = ternary(global.grav == 1, bbox_bottom, bbox_top);
-
 with(Platform) {
     if !place_meeting(x, y - global.grav, Player) {
         continue;
     }
 
+    _feet_y = ternary(global.grav == 1, other.bbox_bottom, other.bbox_top);
     _platform_floor = ternary(global.grav == 1, bbox_top, bbox_bottom);
     _upwards_platform_vspeed = global.grav * min(global.grav * vspeed, 0);
     _downwards_platform_vspeed = global.grav * max(global.grav * vspeed, 0);
@@ -287,6 +286,10 @@ with(Platform) {
             vspeed = _downwards_platform_vspeed - gravity;
             on_floor = true;
             air_jumps = max_air_jumps;
+
+            if global.solids_crush {
+                player_check_crush();
+            }
         }
     }
 }

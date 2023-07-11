@@ -23,6 +23,7 @@ global.time_when_dead = false;
 global.time_when_clear = false;
 // Makes collected items and boss items save immediately.
 global.autosave_items = false;
+global.solids_crush = true;
 
 global.difficulty_count = 4;
 global.difficulty_names[0] = "Load Game";

@@ -6,6 +6,7 @@
 		|sprCamera
 		|sprKiller
 	|sprEmpty
+	|spr1x1
 +Player
 	|sprPlayerIdle
 	|sprPlayerRun
