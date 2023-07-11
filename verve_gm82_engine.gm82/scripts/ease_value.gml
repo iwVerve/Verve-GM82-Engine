@@ -6,6 +6,7 @@ v = clamp(argument0, 0, 1);
 switch(argument1) {
     case ease_none:
         return v;
+
     case ease_quad_in:
         return v * v;
     case ease_quad_out:

@@ -89,3 +89,11 @@ event_late_step
 trg_move_to
 trg_move_dir
 ease_value
+
+trg_gravity
+trg_path
+trg_sound
+trg_fade
+trg_stretch
+trg_rotate
+trg_string

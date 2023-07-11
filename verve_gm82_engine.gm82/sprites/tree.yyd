@@ -5,6 +5,7 @@
 		|sprMusic
 		|sprCamera
 		|sprKiller
+	|sprEmpty
 +Player
 	|sprPlayerIdle
 	|sprPlayerRun

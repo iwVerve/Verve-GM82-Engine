@@ -33,6 +33,9 @@ if !triggered {
         triggered = true;
 
         for (i = 0; i < ds_list_size(triggers_list); i += 1) {
+            if !instance_exists(inst) {
+                break;
+            }
             _trigger = ds_list_find_value(triggers_list, i);
             script_execute(_trigger, "init");
         }
@@ -41,6 +44,9 @@ if !triggered {
 
 if triggered {
     for (i = 0; i < ds_list_size(triggers_list); i += 1) {
+        if !instance_exists(inst) {
+            break;
+        }
         _trigger = ds_list_find_value(triggers_list, i);
         script_execute(_trigger, "step");
     }

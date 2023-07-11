@@ -1,2 +1,2 @@
 trigger_make("a");
-trg_move_to(32, -128, 1, true, ease_quad_inout);
+trg_string("show_message('hewwo')");
