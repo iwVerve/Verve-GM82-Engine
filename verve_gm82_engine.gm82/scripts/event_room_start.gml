@@ -8,6 +8,8 @@ if !instance_exists(MusicPlayer) {
 
 ds_map_clear(global.trigger_map);
 
+cement_blocks();
+
 camera_default();
 camera_update();
 camera_snap();

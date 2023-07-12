@@ -28,6 +28,8 @@ global.debug_key = vk_control;
     global.save_folder = "save\";
     // The password used to encrypt save files. "" means no encryption.
     global.save_encryption_password = "verve";
+    //
+    global.optimize_solids = 2;
 
 // Player behavior
     // Makes the player die once they entirely leave the room.
