@@ -18,7 +18,7 @@ action_id=603
 applies_to=self
 */
 var _moved, _bbox_left_new, _bbox_top_new, _bbox_right_new, _bbox_bottom_new;
-var _x_new, _y_new, _sprite_new, _xscale_new, _yscale_new, _distance, xx, _carry;
+var _x_new, _y_new, _sprite_new, _xscale_new, _yscale_new, _distance, xx, _carry, y_carry;
 
 _moved =
     bbox_left != bbox_left_old ||
@@ -41,13 +41,13 @@ if _moved {
         _carry = false;
         if global.grav == 1 {
             if floor(bbox_bottom) == floor(other.bbox_top_old) - 1 if place_meeting(x, y + _bbox_top_new - other.bbox_top_old + 1, other.id) {
-                y += _bbox_top_new - other.bbox_top_old;
+                y_carry = _bbox_top_new - other.bbox_top_old;
                 _carry = true;
             }
         }
         else {
             if floor(bbox_top) == floor(other.bbox_bottom_old) + 1 if place_meeting(x, y + _bbox_bottom_new - other.bbox_bottom_old - 1, other.id) {
-                y += _bbox_bottom_new - other.bbox_bottom_old;
+                y_carry = _bbox_bottom_new - other.bbox_bottom_old;
                 _carry = true;
             }
         }
@@ -61,6 +61,12 @@ if _moved {
             }
             else if xx < x {
                 move_contact_solid(180, x - xx);
+            }
+            if y_carry > 0 {
+                move_contact_solid(270, y_carry);
+            }
+            else if y_carry < 0 {
+                move_contact_solid(90, -y_carry);
             }
         }
     }

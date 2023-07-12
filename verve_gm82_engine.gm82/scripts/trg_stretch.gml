@@ -4,6 +4,9 @@ var f;
 if !global.trigger_making {
     switch argument[0] {
         case "init":
+            stretch_time = 0;
+            stretch_done = false;
+
             stretch_xscale_start = inst.image_xscale;
             stretch_yscale_start = inst.image_yscale;
             break;
@@ -31,9 +34,6 @@ else {
         if argument_count > 3 {
             stretch_ease = argument[3];
         }
-
-        stretch_time = 0;
-        stretch_done = false;
 
         ds_list_add(triggers_list, trg_stretch);
     }

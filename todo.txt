@@ -1,12 +1,8 @@
-sample rooms
-reusable triggers
-block break sound
-trigger manager follow inst until triggered
-balance sound volume
-first boot volume setting
 renex block cementing
 check softlock potential
-polish the 1px of platform stutter
+fix 1px of platform stutter
+fix platform snap when disabled
+weird screenshare
 controller support?
 resave to flush unused stuff
 documentation

@@ -4,9 +4,13 @@ var f;
 if !global.trigger_making {
     switch argument[0] {
         case "init":
+            rotate_time = 0;
+            rotate_done = false;
+
             rotate_angle_start = inst.image_angle;
+            rotate_angle_end = rotate_angle;
             if rotate_relative {
-                rotate_angle += inst.image_angle;
+                rotate_angle_end += inst.image_angle;
             }
             break;
         case "step":
@@ -14,7 +18,7 @@ if !global.trigger_making {
                 rotate_time += 1;
                 f = rotate_time / rotate_duration;
                 f = ease_value(f, rotate_ease);
-                inst.image_angle = lerp(rotate_angle_start, rotate_angle, f);
+                inst.image_angle = lerp(rotate_angle_start, rotate_angle_end, f);
                 if rotate_time >= rotate_duration {
                     rotate_done = 0;
                 }
@@ -34,9 +38,6 @@ else {
         if argument_count > 3 {
             rotate_ease = argument[3];
         }
-
-        rotate_time = 0;
-        rotate_done = false;
 
         ds_list_add(triggers_list, trg_rotate);
     }

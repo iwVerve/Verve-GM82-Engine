@@ -46,3 +46,5 @@ for (i = 0; i < _folders_count; i += 1) {
     sound_add_directory(_folders[i], ".ogg", 1, 1);
     sound_add_directory(_folders[i], ".mp3", 1, 1);
 }
+
+sound_balance();

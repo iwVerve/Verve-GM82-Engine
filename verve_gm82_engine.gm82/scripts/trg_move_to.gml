@@ -6,11 +6,13 @@ if !global.trigger_making {
         case "init":
             move_to_x_start = x;
             move_to_y_start = y;
+            move_to_x_end = move_to_x;
+            move_to_y_end = move_to_y;
             if move_to_relative {
-                move_to_x += x;
-                move_to_y += y;
+                move_to_x_end += x;
+                move_to_y_end += y;
             }
-            move_to_duration = point_distance(x, y, move_to_x, move_to_y) / move_to_speed;
+            move_to_duration = point_distance(x, y, move_to_x_end, move_to_y_end) / move_to_speed;
             move_to_time = 0;
             break;
         case "step":
@@ -18,8 +20,8 @@ if !global.trigger_making {
                 move_to_time += 1;
                 f = move_to_time / move_to_duration;
                 f = ease_value(f, move_to_ease);
-                hspeed = lerp(move_to_x_start, move_to_x, f) - x;
-                vspeed = lerp(move_to_y_start, move_to_y, f) - y;
+                hspeed = lerp(move_to_x_start, move_to_x_end, f) - x;
+                vspeed = lerp(move_to_y_start, move_to_y_end, f) - y;
             }
             else {
                 hspeed = 0;

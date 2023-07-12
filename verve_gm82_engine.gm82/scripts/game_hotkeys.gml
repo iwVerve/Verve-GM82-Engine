@@ -41,7 +41,7 @@ else {
 
 // Close game
 if keyboard_check_pressed(vk_escape) || global.close_button_pressed {
-    if room == rTitle {
+    if room == rInit || room == rTitle {
         game_end();
     }
     else {
@@ -91,7 +91,7 @@ if keyboard_check(vk_control) && keyboard_check_pressed(ord("M")) {
             config_set("music_volume", unmuted_music_volume);
         }
         else {
-            config_set("music_volume", 25);
+            config_set("music_volume", 15);
         }
     }
 }

@@ -36,4 +36,9 @@ if global.debug {
     live_roomeditor_add_obj_exclusion(PlayerStart);
 }
 
-room_goto_next();
+if !show_volume_check {
+    room_goto_next();
+}
+else {
+    instance_create(0, 0, VolumeCheck);
+}

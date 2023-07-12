@@ -99,3 +99,5 @@ trg_rotate
 trg_string
 player_check_crush
 save_save_asap
+trg_trigger
+sound_balance

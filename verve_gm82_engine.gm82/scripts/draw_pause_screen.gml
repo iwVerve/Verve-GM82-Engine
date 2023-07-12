@@ -10,8 +10,6 @@ draw_set_alpha(0.5);
     draw_rectangle(0, 0, global.game_width, global.game_height, false);
 draw_set_alpha(1);
 
-d3d_set_projection_default();
-
 if !instance_exists(Options) {
     draw_set_halign(fa_middle);
     draw_set_valign(fa_middle);
@@ -31,3 +29,5 @@ if !instance_exists(Options) {
 else with(Options) {
     event_perform(ev_draw, 0);
 }
+
+d3d_set_projection_default();

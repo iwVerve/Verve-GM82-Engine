@@ -43,6 +43,10 @@ if !triggered {
 }
 
 if triggered {
+    if !ds_map_find_value(global.trigger_map, trigger) {
+        triggered = false;
+    }
+
     for (i = 0; i < ds_list_size(triggers_list); i += 1) {
         if !instance_exists(inst) {
             break;
@@ -81,12 +85,24 @@ applies_to=self
 
 // Called from event_late_step()
 
-if triggered {
-    if instance_exists(inst) {
+if instance_exists(inst) {
+    if triggered {
         inst.x = x;
         inst.y = y;
+        inst.hspeed = hspeed;
+        inst.vspeed = vspeed;
+        inst.gravity = gravity;
+        inst.gravity_direction = gravity_direction;
     }
     else {
-        instance_destroy();
+        x = inst.x;
+        y = inst.y;
+        hspeed = inst.hspeed;
+        vspeed = inst.vspeed;
+        gravity = inst.gravity;
+        gravity_direction = inst.gravity_direction;
     }
+}
+else {
+    instance_destroy();
 }

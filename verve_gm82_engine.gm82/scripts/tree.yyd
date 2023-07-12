@@ -41,6 +41,24 @@
 		|render_init
 		|render_compose
 		|render_update
+	+Menu
+		|menu_draw_savefile
+		|menu_draw_navigation
+	+Options
+		|config_init
+		|config_get
+		|config_set
+		|config_default
+		|config_write
+		|config_read
+		+Options
+			|option_list
+			|option_template
+			|option_music_volume
+			|option_sound_volume
+			|option_fullscreen
+			|option_smoothing
+			|option_keyboard
 +Events
 	|event_game_start
 	|event_room_start
@@ -60,6 +78,7 @@
 	|player_check_crush
 +Music
 	|sound_init
+	|sound_balance
 	|music_get_room_bgm
 	|music_play_room_bgm
 	|music_play
@@ -79,24 +98,7 @@
 	|trg_stretch
 	|trg_rotate
 	|trg_string
-+Menu
-	|menu_draw_savefile
-	|menu_draw_navigation
-	+Options
-		|config_init
-		|config_get
-		|config_set
-		|config_default
-		|config_write
-		|config_read
-		+Options
-			|option_list
-			|option_template
-			|option_music_volume
-			|option_sound_volume
-			|option_fullscreen
-			|option_smoothing
-			|option_keyboard
+	|trg_trigger
 +Utility
 	+IWPO Compatibility
 		|savedata_save

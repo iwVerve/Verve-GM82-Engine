@@ -1,5 +1,6 @@
 +World
 	|World
+	|VolumeCheck
 	|Title
 	|Menu
 	|Options
@@ -24,6 +25,7 @@
 	|Platform
 	|SaveBlocker
 	|TileDisplay
+	|SolidTileDisplay
 	+Slopes
 		|Slope
 		|SlopeTopRight

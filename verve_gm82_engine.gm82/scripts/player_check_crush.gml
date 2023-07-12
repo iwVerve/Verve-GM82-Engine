@@ -1,6 +1,6 @@
 ///player_check_crush()
 
-if place_meeting(x + hspeed, y + vspeed, Player) {
+if distance_to_object(Player) < speed + 4 {
     with(Player) {
         if !place_free(x, y) {
             player_kill();
