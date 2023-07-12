@@ -56,6 +56,12 @@ applies_to=self
 /// Try to save
 
 if can_save && instance_exists(Player) && global.grav == grav {
+    with(Player) {
+        if place_meeting(x, y, PlayerKiller) {
+            //exit;
+        }
+    }
+
     can_save = false;
 
     image_index = 1;

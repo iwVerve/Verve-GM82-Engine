@@ -1,8 +1,6 @@
-check softlock potential
 fix 1px of platform stutter
 fix platform snap when disabled
-weird on discord screenshare?
+windowed looks weird on discord screenshare
 controller support?
-resave to flush unused stuff
 documentation
 readme
