@@ -5,9 +5,10 @@ switch(room) {
     case rMenu:
     case rOptions:
     case rSample:
+    case rSampleTriggers:
         return "guy_rock";
 
-    case rSample02:
+    case rSampleBoss:
         return "megaman";
 
     default:

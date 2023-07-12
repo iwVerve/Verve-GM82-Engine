@@ -8,3 +8,4 @@ event_inherited();
 
 max_difficulty = 2;
 grav = -1;
+sprite_index = sprSaveHardFlip;

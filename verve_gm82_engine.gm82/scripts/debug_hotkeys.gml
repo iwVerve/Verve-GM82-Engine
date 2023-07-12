@@ -27,7 +27,7 @@ if keyboard_check_pressed(vk_backspace) {
 }
 
 if keyboard_check_pressed(vk_insert) {
-    save_save();
+    save_save(true);
 }
 
 _target_room = noone;

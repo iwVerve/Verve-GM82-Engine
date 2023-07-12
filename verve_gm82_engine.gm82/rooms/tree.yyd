@@ -5,4 +5,7 @@
 	|rOptions
 +Game
 	|rSample
-	|rSample02
+	|rSampleTriggers
+	|rSampleBoss
+	|rSampleClear
+	|rTemplate

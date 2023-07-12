@@ -16,11 +16,14 @@
 	|Block
 	|BlockMoving
 	|BlockMini
+	|BlockFake
+	|BlockInvisible
 	|IceBlock
 	|ConveyorLeft
 	|ConveyorRight
 	|Platform
 	|SaveBlocker
+	|TileDisplay
 	+Slopes
 		|Slope
 		|SlopeTopRight
@@ -59,6 +62,8 @@
 +Triggers
 	|Trigger
 	|TriggerManager
+	|ButtonLeft
+	|ButtonRight
 +Warps
 	|RoomChanger
 	|Warp
@@ -66,3 +71,10 @@
 	|Item
 	|BossItem
 	|GameClear
++Sample
+	+Boss
+		|objSampleBoss
+		|objSampleBossCherry
+		|objSampleBossWarp
+		|objSampleBossItem
+	|SampleStretchingBlock

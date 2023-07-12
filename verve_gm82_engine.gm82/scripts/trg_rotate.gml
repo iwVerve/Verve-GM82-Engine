@@ -27,10 +27,10 @@ else {
         rotate_angle = argument[0];
         rotate_duration = argument[1];
         rotate_relative = false;
+        rotate_ease = ease_none;
         if argument_count > 2 {
             rotate_relative = argument[2];
         }
-        rotate_ease = ease_none;
         if argument_count > 3 {
             rotate_ease = argument[3];
         }

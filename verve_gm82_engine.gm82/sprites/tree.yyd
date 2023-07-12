@@ -1,12 +1,9 @@
 +World
-	+Controller
-		|sprWorld
-		|sprMenu
-		|sprMusic
-		|sprCamera
-		|sprKiller
-	|sprEmpty
-	|spr1x1
+	|sprWorld
+	|sprMenu
+	|sprMusic
+	|sprCamera
+	|sprKiller
 +Player
 	|sprPlayerIdle
 	|sprPlayerRun
@@ -26,6 +23,9 @@
 	|sprBlockMask
 	|sprBlockMiniMask
 	|sprIceBlockMask
+	|sprBlock
+	|sprBlockInvisible
+	|sprBlockFake
 	|sprConveyorLeft
 	|sprConveyorRight
 	|sprPlatform
@@ -83,6 +83,12 @@
 	|sprWarp
 +Triggers
 	|sprTriggerMask
+	|sprTrigger
+	|sprButtonLeft
+	|sprButtonRight
 +Items
 	|sprItem
 	|sprBossItem
++Misc
+	|sprEmpty
+	|spr1x1

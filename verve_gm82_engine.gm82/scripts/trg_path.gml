@@ -13,13 +13,13 @@ else {
         path_path = argument[0];
         path_spd = argument[1];
         path_absolute = true;
-        path_end_action = path_action_stop;
+        path_action = path_action_stop;
         path_pos = 0;
         if argument_count > 2 {
             path_absolute = argument[2];
         }
         if argument_count > 3 {
-            path_end_action = argument[3];
+            path_action = argument[3];
         }
         if argument_count > 4 {
             path_pos = argument[4];

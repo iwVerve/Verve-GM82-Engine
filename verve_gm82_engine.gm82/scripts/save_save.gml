@@ -1,7 +1,16 @@
-///save_save()
+///save_save([impossible=false])
 
 // Saves the game.
-// The argument chooses between a proper save, and a light save that only updates deathtime.
+// The argument allows saving even on impossible.
+
+if save_get("difficulty") == 3 {
+    if argument_count == 0 {
+        exit;
+    }
+    if !argument[0] {
+        exit;
+    }
+}
 
 if !instance_exists(Player) {
     exit;

@@ -15,6 +15,7 @@ type = type_normal;
 
 x_offset = 0;
 y_offset = 0;
+autosave = false;
 #define Collision_Player
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -36,6 +37,7 @@ applies_to=self
 //field type: enum(type_normal,type_outside,type_wrap_around)
 //field x_offset: number
 //field y_offset: number
+//field autosave: bool
 #define Other_10
 /*"/*'/**//* YYD ACTION
 lib_id=1
@@ -73,4 +75,8 @@ else {
 
 if room_exists(room_to) {
     room_goto(room_to);
+
+    if autosave {
+        save_save_asap();
+    }
 }

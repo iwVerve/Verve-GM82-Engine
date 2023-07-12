@@ -6,5 +6,5 @@ applies_to=self
 */
 if !save_get("clear") {
     save_set("clear", true);
-    save_save();
+    save_save(true);
 }

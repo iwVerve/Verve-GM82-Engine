@@ -7,3 +7,4 @@ applies_to=self
 event_inherited();
 
 max_difficulty = 2;
+sprite_index = sprSaveHard;

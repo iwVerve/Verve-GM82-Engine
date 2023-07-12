@@ -30,6 +30,7 @@
 		|save_set_persistent
 		|save_get
 		|save_save
+		|save_save_asap
 		|save_load
 		|save_write
 		|save_read
@@ -45,7 +46,6 @@
 	|event_room_start
 	|event_world_step
 	|event_world_end_step
-	|event_late_step
 +Player
 	|player_try_jump
 	|player_ground_jump

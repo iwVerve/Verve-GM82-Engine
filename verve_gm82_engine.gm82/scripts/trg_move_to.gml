@@ -10,7 +10,7 @@ if !global.trigger_making {
                 move_to_x += x;
                 move_to_y += y;
             }
-            move_to_duration = point_direction(x, y, move_to_x, move_to_y) / move_to_speed;
+            move_to_duration = point_distance(x, y, move_to_x, move_to_y) / move_to_speed;
             move_to_time = 0;
             break;
         case "step":
@@ -34,10 +34,10 @@ else {
         move_to_y = argument[1];
         move_to_speed = argument[2];
         move_to_relative = false;
+        move_to_ease = ease_none;
         if argument_count > 3 {
             move_to_relative = argument[3];
         }
-        move_to_ease = ease_none;
         if argument_count > 4 {
             move_to_ease = argument[4];
         }

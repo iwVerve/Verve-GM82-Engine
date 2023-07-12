@@ -309,7 +309,7 @@ with(Platform) {
             on_floor = true;
             air_jumps = max_air_jumps;
 
-            if global.solids_crush {
+            with(other) {
                 player_check_crush();
             }
         }
@@ -351,11 +351,7 @@ applies_to=self
 */
 /// Player animation
 
-if on_vine {
-    sprite_index = sprPlayerSlide;
-    image_speed = 0.5;
-}
-else if on_floor {
+if on_floor {
     if h_input != 0 {
         sprite_index = sprPlayerRun;
         image_speed = 0.5;
@@ -364,6 +360,10 @@ else if on_floor {
         sprite_index = sprPlayerIdle;
         image_speed = 0.2;
     }
+}
+else if on_vine {
+    sprite_index = sprPlayerSlide;
+    image_speed = 0.5;
 }
 else {
     if vspeed * global.grav < 0 {

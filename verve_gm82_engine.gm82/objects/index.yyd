@@ -60,3 +60,13 @@ Trigger
 Camera
 TriggerManager
 BlockMoving
+TileDisplay
+BlockFake
+BlockInvisible
+objSampleBoss
+objSampleBossCherry
+objSampleBossItem
+objSampleBossWarp
+ButtonLeft
+ButtonRight
+SampleStretchingBlock

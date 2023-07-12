@@ -85,7 +85,7 @@ trigger_init
 camera_default
 trg_move
 trigger_make
-event_late_step
+
 trg_move_to
 trg_move_dir
 ease_value
@@ -98,3 +98,4 @@ trg_stretch
 trg_rotate
 trg_string
 player_check_crush
+save_save_asap
