@@ -1,3 +1,6 @@
+//gm82 fields begin
+bounce=true
+//gm82 fields end
 sprite_index = choose(
     sprCherry,
     sprCherryOrange,
@@ -12,3 +15,4 @@ sprite_index = choose(
     sprCherryMagenta,
     sprCherryPink,
 );
+vspeed = 3;

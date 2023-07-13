@@ -17,11 +17,6 @@
 	|Block
 	|BlockMoving
 	|BlockMini
-	|BlockFake
-	|BlockInvisible
-	|IceBlock
-	|ConveyorLeft
-	|ConveyorRight
 	|Platform
 	|SaveBlocker
 	|TileDisplay
@@ -42,6 +37,7 @@
 	|MiniSpikeRight
 	|MiniSpikeDown
 	|MiniSpikeLeft
+	|KillerBlock
 	|Cherry
 +Saves
 	|SaveMedium
@@ -51,10 +47,18 @@
 	|SaveVeryHard
 	|SaveVeryHardFlip
 +Gimmicks
-	|Water
-	|WaterRefreshing
-	|WaterGroundJump
-	|WaterCatharsis
+	+Water
+		|Water
+		|WaterRefreshing
+		|WaterGroundJump
+		|WaterCatharsis
+	+Blocks
+		|BlockFake
+		|BlockInvisible
+		|IceBlock
+		|ConveyorLeft
+		|ConveyorRight
+	|PlatformTouch
 	|VineLeft
 	|VineRight
 	|JumpRefresher

@@ -45,6 +45,7 @@
 	|sprMiniSpikeRight
 	|sprMiniSpikeDown
 	|sprMiniSpikeLeft
+	|sprKillerBlock
 	|sprCherry
 	+Cherry colors
 		|sprCherryOrange

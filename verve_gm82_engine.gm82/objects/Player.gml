@@ -22,6 +22,7 @@ x_scale = 1;
 has_bow = (save_get("difficulty") == 0);
 on_floor = false;
 on_vine = false;
+feet_y_prev = 0;
 
 if global.save_autosave {
     save_save();
@@ -94,6 +95,7 @@ if on_floor {
 }
 
 gravity = global.grav * grav;
+feet_y_prev = ternary(global.grav == 1, bbox_bottom, bbox_top);
 /*"/*'/**//* YYD ACTION
 lib_id=1
 action_id=603
@@ -260,11 +262,15 @@ action_id=603
 applies_to=self
 */
 /// Platform collision
-var _feet_y, _platform_floor, _upwards_platform_vspeed, _downwards_platform_vspeed;
-var _landed_on_platform, _jumped_out, yy, _dir;
+var yy, _dir, _feet_y, _feet_y_prev, _platform_floor, _platform_floor_prev;
+var _upwards_platform_vspeed, _downwards_platform_vspeed;
+var _above_platform_prev, _on_or_below_platform_now, _landed_on_platform;
+var _below_platform_prev, _on_or_above_platform_now, _jumped_out;
 
 with(Platform) {
-    if !place_meeting(x, y - global.grav, Player) {
+    // Only run code if the player is touching the platform or
+    // is just above it and moving upwards.
+    if other.bbox_right < bbox_left || other.bbox_left > bbox_right {
         continue;
     }
 
@@ -273,23 +279,29 @@ with(Platform) {
     _upwards_platform_vspeed = global.grav * min(global.grav * vspeed, 0);
     _downwards_platform_vspeed = global.grav * max(global.grav * vspeed, 0);
 
-    // Whether the player was above the platform on the previous frame.
-    // Since we are touching on this frame, we must have just landed if this is true.
-    _landed_on_platform = global.grav * (_feet_y - other.vspeed - global.grav) <= global.grav * (_platform_floor - _upwards_platform_vspeed);
-    // Whether we are about to jump through the platform from below.
-    _jumped_out = global.grav * (_feet_y + other.vspeed) <= global.grav * (_platform_floor + vspeed);
+    // Whether the player just landed on the platform from above.
+    _above_platform_prev = global.grav * (other.feet_y_prev) < global.grav * (platform_floor_prev);
+    _on_or_below_platform_now = global.grav * (_feet_y) >= global.grav * (_platform_floor - global.grav);
+    _landed_on_platform = _above_platform_prev && _on_or_below_platform_now;
+    // Whether the player just jumped through the platform from below.
+    _below_platform_prev = global.grav * (other.feet_y_prev) >= global.grav * (platform_floor_prev);
+    _on_or_above_platform_now = global.grav * (_feet_y) < global.grav * (_platform_floor);
+    _jumped_out = _below_platform_prev && _on_or_above_platform_now;
+    show_debug_message(str_cat(_above_platform_prev, "-", _on_or_below_platform_now, "|", _below_platform_prev, "-", _on_or_above_platform_now));
 
     if _landed_on_platform || (_jumped_out && snap) {
         with(other) {
             // Target y position to snap to
-            yy = floor(_platform_floor + y - _feet_y - global.grav);
+            yy = floor(_platform_floor + round(y) - _feet_y - global.grav);
 
-            if global.strong_platforms {
+            if global.strong_platforms && _landed_on_platform {
                 y = yy;
+                player_land();
             }
             else {
                 if place_free(x, yy) {
                     y = yy;
+                    player_land();
                 }
                 else {
                     _dir = 90 + 180 * (yy > y);
@@ -305,9 +317,7 @@ with(Platform) {
                 }
             }
 
-            vspeed = _downwards_platform_vspeed - gravity;
-            on_floor = true;
-            air_jumps = max_air_jumps;
+            vspeed = _downwards_platform_vspeed;
 
             with(other) {
                 player_check_crush();

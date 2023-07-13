@@ -1,5 +1,3 @@
-fix 1px of platform stutter
-fix platform snap when disabled
 windowed looks weird on discord screenshare
 controller support?
 documentation
