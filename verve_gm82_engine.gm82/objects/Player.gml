@@ -101,27 +101,6 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-/// Actions
-
-if !frozen {
-    if input_check_pressed(key_jump) {
-        player_try_jump();
-    }
-    if input_check_released(key_jump) {
-        player_release_jump();
-    }
-    if input_check_pressed(key_shoot) {
-        player_shoot();
-    }
-    if input_check_pressed(key_suicide) {
-        player_kill();
-    }
-}
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
 /// Vines
 var _on_vine_left, _on_vine_right;
 
@@ -155,6 +134,27 @@ if on_vine {
         }
 
         on_vine = false;
+    }
+}
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+/// Actions
+
+if !frozen {
+    if input_check_pressed(key_jump) {
+        player_try_jump();
+    }
+    if input_check_released(key_jump) {
+        player_release_jump();
+    }
+    if input_check_pressed(key_shoot) {
+        player_shoot();
+    }
+    if input_check_pressed(key_suicide) {
+        player_kill();
     }
 }
 /*"/*'/**//* YYD ACTION
