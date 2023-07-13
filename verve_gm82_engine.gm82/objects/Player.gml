@@ -21,7 +21,7 @@ h_input = 0;
 x_scale = 1;
 has_bow = (save_get("difficulty") == 0);
 on_floor = false;
-on_vine = false;
+vine_direction = false;
 feet_y_prev = 0;
 
 if global.save_autosave {
@@ -41,6 +41,11 @@ var _current_max_vspeed, _ice, _conveyor;
 
 _ice = instance_place(x, y + global.grav, IceBlock);
 
+vine_direction = place_meeting(x + 1, y, VineRight);
+if vine_direction == 0 {
+    vine_direction = -place_meeting(x - 1, y, VineLeft);
+}
+
 // Horizontal movement
 h_input = 0;
 if !frozen {
@@ -50,7 +55,7 @@ if !frozen {
     }
 }
 
-if h_input != 0 {
+if h_input != 0 if vine_direction == 0 {
     x_scale = h_input;
 }
 
@@ -101,46 +106,6 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-/// Vines
-var _on_vine_left, _on_vine_right;
-
-_on_vine_left = place_meeting(x - 1, y, VineLeft);
-_on_vine_right = place_meeting(x + 1, y, VineRight);
-
-on_vine = _on_vine_left || _on_vine_right;
-
-if on_vine {
-    if _on_vine_right {
-        x_scale = -1;
-    }
-    else {
-        x_scale = 1;
-    }
-
-    vspeed = 2 * global.grav;
-
-    if (_on_vine_left && input_check_pressed(key_right)) || (_on_vine_right && input_check_pressed(key_left)) {
-        if input_check(key_jump) {
-            hspeed = 15;
-            vspeed = -9 * global.grav;
-            sound_play("player_wall_jump");
-        }
-        else {
-            hspeed = 3;
-        }
-
-        if _on_vine_right {
-            hspeed *= -1;
-        }
-
-        on_vine = false;
-    }
-}
-/*"/*'/**//* YYD ACTION
-lib_id=1
-action_id=603
-applies_to=self
-*/
 /// Actions
 
 if !frozen {
@@ -155,6 +120,40 @@ if !frozen {
     }
     if input_check_pressed(key_suicide) {
         player_kill();
+    }
+}
+/*"/*'/**//* YYD ACTION
+lib_id=1
+action_id=603
+applies_to=self
+*/
+/// Vines
+
+if vine_direction != 0 {
+    if vine_direction == 1 {
+        x_scale = -1;
+    }
+    else {
+        x_scale = 1;
+    }
+
+    vspeed = 2 * global.grav;
+
+    if (vine_direction == -1 && input_check_pressed(key_right)) || (vine_direction == 1 && input_check_pressed(key_left)) {
+        if input_check(key_jump) {
+            hspeed = 15;
+            vspeed = -9 * global.grav;
+            sound_play("player_wall_jump");
+        }
+        else {
+            hspeed = 3;
+        }
+
+        if vine_direction == 1 {
+            hspeed *= -1;
+        }
+
+        vine_direction = false;
     }
 }
 /*"/*'/**//* YYD ACTION
@@ -371,7 +370,7 @@ if on_floor {
         image_speed = 0.2;
     }
 }
-else if on_vine {
+else if vine_direction != 0 {
     sprite_index = sprPlayerSlide;
     image_speed = 0.5;
 }
