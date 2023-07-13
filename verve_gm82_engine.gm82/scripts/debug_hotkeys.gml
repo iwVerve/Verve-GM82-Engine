@@ -5,7 +5,7 @@ if !global.debug || !is_in_game() {
     exit;
 }
 
-if global.debug_key != noone && !keyboard_check(global.debug_key) {
+if global.debug_key != noone if !keyboard_check(global.debug_key) {
     exit;
 }
 
@@ -60,6 +60,7 @@ if keyboard_check(vk_tab) {
         x = mouse_x;
         y = mouse_y;
     }
+    global.camera_skip_update = true;
 }
 
 if keyboard_check_pressed(ord("G")) {

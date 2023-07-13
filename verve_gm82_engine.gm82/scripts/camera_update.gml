@@ -1,5 +1,10 @@
 ///camera_update()
 
+if global.camera_skip_update {
+    global.camera_skip_update = false;
+    exit;
+}
+
 if !is_in_game() || !global.camera_enabled {
     exit;
 }
