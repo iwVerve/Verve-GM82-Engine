@@ -1,5 +1,7 @@
 ///game_hotkeys()
 
+//
+
 // Pause game
 if !global.paused {
     if input_check_pressed(key_pause) if is_in_game() {

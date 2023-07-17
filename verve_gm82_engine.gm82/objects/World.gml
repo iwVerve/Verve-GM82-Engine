@@ -27,7 +27,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-///event_world_step()
+///event_world_end_step()
 
 // Code moved to script to allow multiple code windows open.
 event_world_end_step();
@@ -64,7 +64,7 @@ lib_id=1
 action_id=603
 applies_to=self
 */
-var _pause_surf;
+/// Draw pause screen
 
 if global.paused {
     draw_pause_screen();

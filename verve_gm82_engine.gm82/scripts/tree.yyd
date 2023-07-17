@@ -35,9 +35,9 @@
 		|save_load
 		|save_write
 		|save_read
-		|save_default
 		|save_select
 		|save_new_game
+		|save_default
 	+Render
 		|render_init
 		|render_compose
@@ -101,9 +101,10 @@
 	|trg_string
 	|trg_trigger
 +Utility
-	+IWPO Compatibility
+	+Compatibility
 		|savedata_save
 		|savedata_load
+		|gm82room_jtool_table
 	|draw_text_outlined
 	|key_get_name
 	|ternary

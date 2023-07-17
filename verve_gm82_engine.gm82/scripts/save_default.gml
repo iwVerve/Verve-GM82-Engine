@@ -15,3 +15,4 @@ save_set_persistent("saved", false);
 save_set_persistent("time", 0);
 save_set_persistent("deaths", 0);
 save_set_persistent("room", global.first_room);
+save_set_persistent("grav", 1);

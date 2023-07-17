@@ -286,7 +286,6 @@ with(Platform) {
     _below_platform_prev = global.grav * (other.feet_y_prev) >= global.grav * (platform_floor_prev);
     _on_or_above_platform_now = global.grav * (_feet_y) < global.grav * (_platform_floor);
     _jumped_out = _below_platform_prev && _on_or_above_platform_now;
-    show_debug_message(str_cat(_above_platform_prev, "-", _on_or_below_platform_now, "|", _below_platform_prev, "-", _on_or_above_platform_now));
 
     if _landed_on_platform || (_jumped_out && snap) {
         with(other) {

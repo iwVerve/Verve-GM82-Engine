@@ -44,11 +44,17 @@ if !sticked {
 }
 else {
     if instance_exists(inst) {
+        if !place_meeting(x, y, inst) {
+            sticked = false;
+        }
         x = inst.x + lengthdir_x(offset_dist, offset_angle + inst.image_angle);
         y = inst.y + lengthdir_y(offset_dist, offset_angle + inst.image_angle);
     }
     else {
         sticked = false;
+    }
+
+    if !sticked {
         inst = noone;
         gravity = grav;
     }
