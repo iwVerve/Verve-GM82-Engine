@@ -29,7 +29,6 @@ global.paused = false;
 unmuted_music_volume = config_get("music_volume");
 
 set_room_views();
-io_set_roomend_clear(false);
 
 if global.debug {
     live_roomeditor_start();

@@ -1,9 +1,13 @@
 ///game_hotkeys()
 
-//
-
 // Pause game
 if !global.paused {
+    // Load game
+    if input_check_pressed(key_restart) && is_in_game() {
+        save_load();
+        exit; // Prevent wacky behavior when pausing and restarting on the same frame.
+    }
+
     if input_check_pressed(key_pause) if is_in_game() {
         _pause_surf = surface_get("pause_surf", global.game_width, global.game_height);
         surface_copy(_pause_surf, 0, 0, application_surface);
@@ -55,11 +59,6 @@ if keyboard_check_pressed(vk_escape) || global.close_button_pressed {
 // Restart game
 if keyboard_check_pressed(vk_f2) {
     restart_game();
-}
-
-// Load game
-if input_check_pressed(key_restart) && is_in_game() {
-    save_load();
 }
 
 // Fullscreen

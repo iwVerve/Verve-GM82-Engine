@@ -74,6 +74,9 @@ else {
 }
 
 if room_exists(room_to) {
+    if global.clear_input_on_warp {
+        io_set_roomend_clear(true);
+    }
     room_goto(room_to);
 
     if autosave {

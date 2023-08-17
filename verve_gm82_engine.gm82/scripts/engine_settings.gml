@@ -3,7 +3,9 @@
 // You can edit these values to specify the behavior of your game.
 
 // Enables dev keys
+// Debug keys are listed in the debug overlay.
 global.debug = true;
+// Set to noone to use no debug key, e.g. yoyoyo engine behavior.
 global.debug_key = vk_control;
 
 // Game properties
@@ -38,6 +40,10 @@ global.debug_key = vk_control;
     global.strong_platforms = true;
     // Makes moving platforms/blocks crush the player.
     global.solids_crush = true;
+    // Stops whatever keys the player was holding on certain transitions.
+    // Useful in e.g. very cramped needle where running into a warp can easily result in death.
+    global.clear_input_on_warp = true;
+    global.clear_input_on_restart = false;
 
 // Difficulties
     global.difficulty_count = 4;

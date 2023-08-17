@@ -14,4 +14,7 @@ if save_get("saved") {
     }
 }
 
+if global.clear_input_on_restart {
+    io_set_roomend_clear(true);
+}
 room_goto(save_get("room"));
