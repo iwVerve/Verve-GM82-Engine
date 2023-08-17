@@ -42,7 +42,7 @@ global.debug_key = vk_control;
     global.solids_crush = true;
     // Stops whatever keys the player was holding on certain transitions.
     // Useful in e.g. very cramped needle where running into a warp can easily result in death.
-    global.clear_input_on_warp = true;
+    global.clear_input_on_warp = false;
     global.clear_input_on_restart = false;
 
 // Difficulties
