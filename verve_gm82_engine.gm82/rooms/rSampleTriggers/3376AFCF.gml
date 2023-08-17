@@ -4,6 +4,3 @@ width=128
 height=192
 //gm82 fields end
 depth = 1100;
-trigger_make("stretch");
-trg_stretch(1, 0, 25);
-trg_move_to(0, 192, 192/25, true);

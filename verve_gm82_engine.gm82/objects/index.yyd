@@ -74,3 +74,15 @@ SolidTileDisplay
 VolumeCheck
 PlatformTouch
 KillerBlock
+TriggerMaker
+TriggerMove
+TriggerMoveDir
+TriggerMoveTo
+TriggerPath
+TriggerGravity
+TriggerSound
+TriggerFade
+TriggerStretch
+TriggerRotate
+TriggerString
+TriggerTrigger

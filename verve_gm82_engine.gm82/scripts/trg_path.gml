@@ -1,4 +1,4 @@
-///trg_path(path, speed, [absolute=true, action=path_action_stop, position=0])
+///trg_path(path, speed, [absolute=false, action=path_action_stop, position=0])
 
 if !global.trigger_making {
     switch argument[0] {
@@ -12,7 +12,7 @@ else {
     with(global.trigger_target) {
         path_path = argument[0];
         path_spd = argument[1];
-        path_absolute = true;
+        path_absolute = false;
         path_action = path_action_stop;
         path_pos = 0;
         if argument_count > 2 {
