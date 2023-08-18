@@ -1,4 +1,4 @@
-# Verve-GM8.2-Engine
+# Verve GM8.2 Engine
 A light but robust GM8.2 framework for developing IWBTG fangames.
 Currently mostly finished - feature complete, but an engine has a lot of opportunities to break.
 For engine instructions and documentation, look either in the sample rooms, at code comments, or in the documentation folder.
