@@ -1,4 +1,4 @@
-windowed looks weird on discord screenshare
-controller support?
-iwpo compatibility
+looks weird on discord screenshare (looks to be an gm8.2 extension bug)
+controller support? (will probably look into only if asked. it's more of a mess then studio)
+iwpo compatibility (should only require an update to iwpo, not the engine)
 more documentation
