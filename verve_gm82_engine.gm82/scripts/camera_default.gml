@@ -1,5 +1,8 @@
 ///camera_default()
 
+// Resets the camera to the default values.
+// The default values themselves are set in engine_settings.
+
 global.camera_enabled =     global.camera_enabled_default;
 global.camera_width =       global.camera_width_default;
 global.camera_height =      global.camera_height_default;

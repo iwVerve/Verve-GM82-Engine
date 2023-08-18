@@ -1,5 +1,8 @@
 ///player_flip([target])
 
+// If no target gravity is provided, always flips.
+// Otherwise, only flips to the specific gravity (1 or -1).
+
 if argument_count > 0 if argument[0] == global.grav {
     exit;
 }

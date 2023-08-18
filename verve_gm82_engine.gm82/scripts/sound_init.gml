@@ -15,6 +15,16 @@ sound_global_volume(global.sound_gain);
 _folders[0] = "data\sounds\";
 _folders_count = 1;
 
+if !directory_exists(_folders[0]) {
+    show_error(
+"Sound directory '" + _folders[0] + "' not found!
+
+If you're a maker, make sure you copied the data folder included in the project folder.
+
+If you're a player, make sure you unzipped the game and make sure a data folder was provided with the game.",
+     false);
+}
+
 for (_file = file_find_first(_folders[0] + "*", fa_directory); _file != ""; _file = file_find_next()) {
     if directory_exists(_folders[0] + _file) && _file != "." && _file != ".." {
         _folders[folders_count] = _folders[0] + _file;
@@ -32,6 +42,16 @@ for (i = 0; i < _folders_count; i += 1) {
 // Music
 _folders[0] = "data\music\";
 _folders_count = 1;
+
+if !directory_exists(_folders[0]) {
+    show_error(
+"Music directory '" + _folders[0] + "' not found!
+
+If you're a maker, make sure you copied the data folder included in the project folder.
+
+If you're a player, make sure you unzipped the game and make sure a data folder was provided with the game.",
+     false);
+}
 
 for (_file = file_find_first(_folders[0] + "*", fa_directory); _file != ""; _file = file_find_next()) {
     if directory_exists(_folders[0] + _file) && _file != "." && _file != ".." {

@@ -1,0 +1,18 @@
+Rundown of major differences from Studio:
+
+Game Maker 8.2 gets updated! If something doesn't work, try reinstalling Game
+Maker 8.2 first if you haven't done so recently. I also ask a related request,
+please update your engine copy before starting a new project.
+
+Code changes
+No ++, --, get used to it.
+No enums, instead see the constants menu on the toolbar (blue C icon).
+No quick var declarations, hence the long lines of var declarations. I tried
+to underscore var names to make it clear what is and isn't a local variable.
+
+Room editor
+Quickly turn it on and off with the last icon on the toolbar. The new editor
+contains its own guide on its toolbar. Most creation code functionality is
+replaced by the fields system, accessed with the bottom left button on any
+selected instance. Check sample rooms for examples, and the documentation
+included in the Game Maker 8.2 installer folder for more advanced usage.

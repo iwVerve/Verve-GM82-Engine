@@ -1,5 +1,4 @@
 windowed looks weird on discord screenshare
 controller support?
 iwpo compatibility
-documentation
-readme
+more documentation

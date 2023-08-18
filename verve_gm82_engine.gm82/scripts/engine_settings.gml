@@ -2,8 +2,8 @@
 
 // You can edit these values to specify the behavior of your game.
 
-// Enables dev keys
-// Debug keys are listed in the debug overlay.
+// Enable dev keys
+// Debug keybinds are listed in the debug overlay activated with backspace.
 global.debug = true;
 // Set to noone to use no debug key, e.g. yoyoyo engine behavior.
 global.debug_key = vk_control;

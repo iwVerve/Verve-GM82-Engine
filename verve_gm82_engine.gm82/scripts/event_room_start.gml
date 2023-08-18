@@ -1,5 +1,7 @@
 ///event_room_start()
 
+// Called from the World object.
+
 room_speed = global.game_speed;
 
 if !instance_exists(MusicPlayer) {

@@ -1,0 +1,10 @@
+Triggers are similar to YoYoYo Engine Verve Edition's triggers, but simplified
+and with trigger makers, a new alternative interface that suits the room editor
+better.
+
+The trigger makers are objects you place in the room editor, and using the
+fields system set their  trigger id and link them to an instance that it
+affects. The remaining fields are all the properties of the specific action.
+
+The sample rooms come with a whole room dedicated to triggers. Use it as a
+reference.

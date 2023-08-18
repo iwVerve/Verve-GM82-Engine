@@ -2,7 +2,7 @@
 
 // Sets up all the data necessary to allow for rebinds.
 // This script also holds all the default values.
-// The key constants are defined in the project;s Used-Defined Constants window.
+// The key constants are defined in the project's Used-Defined Constants window.
 
 global.input_keyboard_file = global.save_folder + "keyboard";
 

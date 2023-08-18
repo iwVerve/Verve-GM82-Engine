@@ -1,0 +1,7 @@
+The data folder stores all of the game's sound assets. However, as it
+technically isn't part of the .gm82 project format, Game Maker doesn't copy it
+or save it on its own, meaning you need to do it manually. It's recommended to
+copy the project folder to make a new copy instead of Save As.
+
+The sample rooms go out of their way to try and show off everything. Look at
+them to get familiar with the engine or to see how something specific is done.

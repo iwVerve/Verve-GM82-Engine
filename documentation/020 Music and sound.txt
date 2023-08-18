@@ -1,0 +1,12 @@
+The Game Maker 8.2 Sound extension greatly improves Game Maker's sound
+capabilities, but it requires audio to be stored externally instead of inside
+the project. The data folder isn't part of your project, it doesn't get resaved
+if you save under a new name, and it doesn't get exported to the compiled game.
+
+If you forget to include the data directory, an error will tell you so.
+
+Sound and music files can be .wav, .ogg, or .mp3.
+
+For examples on how sounds are used and referred to, you can check the
+music_get_room_bgm or player_shoot scripts, or the sound triggers in
+rSampleTriggers. For a list of sounds, simply look into the data folder.

@@ -1,4 +1,6 @@
 ///event_world_step()
+
+// Called from the World object.
 var _pause_surf;
 
 game_hotkeys();

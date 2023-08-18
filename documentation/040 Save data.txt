@@ -1,0 +1,12 @@
+The save system doesn't use hardcoded values like engines commonly do. Instead,
+save data is stored in a save map as key-value pairs.
+
+The save_set and save_get functions are used to access saved data. Data saved
+with save_set will be saved only when the player saves. Data saved with
+save_set_persistent will be saved even if the player restarts immediately.
+
+If a value hasn't been set yet, save_get will return its default argument, or
+0 if none is provided.
+
+For more specific documentation check save_init or the specific functions. For
+simple examples, look at the GameClear or Item objects.

@@ -1,4 +1,7 @@
 ///cement_blocks()
+
+// Stitches together Block instances into fewer, larger, instances for performance optimization.
+
 var _coll;
 
 repeat(global.optimize_solids) {

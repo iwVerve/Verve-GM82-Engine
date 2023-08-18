@@ -1,6 +1,7 @@
 ///event_game_start()
 
 // The main initialization script.
+// Called from the World object.
 
 var _object;
 

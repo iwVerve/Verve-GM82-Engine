@@ -1,6 +1,6 @@
 ///update_window_caption()
 
-// Sets the window caption to show the deathtime.
+// Updates the window caption to show current deathtime.
 
 var _caption;
 
