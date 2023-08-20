@@ -6,7 +6,8 @@ with save_set will be saved only when the player saves. Data saved with
 save_set_persistent will be saved even if the player restarts immediately.
 
 If a value hasn't been set yet, save_get will return its default argument, or
-0 if none is provided.
+0 if none is provided. This means you don't have to worry about initializing
+save values anywhere.
 
-For more specific documentation check save_init or the specific functions. For
+For more specific documentation check the specific functions. For
 simple examples, look at the GameClear or Item objects.
