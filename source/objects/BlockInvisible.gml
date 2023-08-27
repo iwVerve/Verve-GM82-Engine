@@ -25,6 +25,7 @@ if !init {
     block = instance_create(x, y, Block);
     block.image_xscale = image_xscale;
     block.image_yscale = image_yscale;
+    init = true;
 }
 
 if !visible if collision_rectangle(bbox_left - 1, bbox_top - 1, bbox_right + 1, bbox_bottom + 1, Player, false, false) {
