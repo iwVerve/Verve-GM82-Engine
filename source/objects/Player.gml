@@ -153,7 +153,7 @@ if vine_direction != 0 {
             hspeed *= -1;
         }
 
-        vine_direction = false;
+        vine_direction = 0;
     }
 }
 /*"/*'/**//* YYD ACTION
