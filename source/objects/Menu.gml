@@ -54,7 +54,7 @@ if state == state_not_selected {
 
 // Selecting a difficulty
 else if state == state_difficulty {
-    current_difficulty = modwrap(current_difficulty + _h_input, ternary(save_get("exists"), -1, 0), 4);
+    current_difficulty = modwrap(current_difficulty + _h_input, ternary(save_get("exists"), -1, 0), global.difficulty_count);
 
     if input_check_pressed(key_menu_accept) {
         if current_difficulty == -1 {
