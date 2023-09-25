@@ -27,7 +27,7 @@ If you're a player, make sure you unzipped the game and make sure a data folder 
 
 for (_file = file_find_first(_folders[0] + "*", fa_directory); _file != ""; _file = file_find_next()) {
     if directory_exists(_folders[0] + _file) && _file != "." && _file != ".." {
-        _folders[folders_count] = _folders[0] + _file;
+        _folders[_folders_count] = _folders[0] + _file;
         _folders_count += 1;
     }
 }
@@ -55,7 +55,7 @@ If you're a player, make sure you unzipped the game and make sure a data folder 
 
 for (_file = file_find_first(_folders[0] + "*", fa_directory); _file != ""; _file = file_find_next()) {
     if directory_exists(_folders[0] + _file) && _file != "." && _file != ".." {
-        _folders[folders_count] = _folders[0] + _file;
+        _folders[_folders_count] = _folders[0] + _file;
         _folders_count += 1;
     }
 }
