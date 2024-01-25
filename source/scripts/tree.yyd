@@ -13,6 +13,8 @@
 		|camera_default
 		|camera_update
 		|camera_snap
+		|camera_set_target
+		|camera_reset_target
 	+Input
 		|input_init
 		|input_check

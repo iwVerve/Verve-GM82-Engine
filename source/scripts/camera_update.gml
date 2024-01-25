@@ -9,7 +9,7 @@ if !is_in_game() || !global.camera_enabled {
     exit;
 }
 
-with(Player) {
+with(global.camera_target) {
     global.camera_target_x = x - global.camera_width / 2;
     global.camera_target_y = y - global.camera_height / 2;
 }

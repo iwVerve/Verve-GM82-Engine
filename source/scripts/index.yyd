@@ -104,3 +104,5 @@ sound_balance
 cement_blocks
 
 gm82room_jtool_table
+camera_set_target
+camera_reset_target

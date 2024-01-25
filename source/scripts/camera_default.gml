@@ -9,3 +9,4 @@ global.camera_height =      global.camera_height_default;
 global.camera_lerp =        global.camera_lerp_default;
 global.camera_leave_room =  global.camera_leave_room_default;
 global.camera_screen_lock = global.camera_screen_lock_default;
+global.camera_target =      global.camera_target_default;
