@@ -8,6 +8,12 @@ with(all) {
     event_perform(ev_trigger, ev_draw_gui);
 }
 
+// Bump application surface alpha to 1.
+draw_set_color(c_black);
+draw_set_blend_mode(bm_add);
+    draw_rectangle(0, 0, global.game_width, global.game_height, false);
+draw_set_blend_mode(bm_normal);
+
 // Setup for drawing the application surface to the game window
 surface_reset_target();
 d3d_set_depth(0);
