@@ -18,7 +18,7 @@ action_id=603
 applies_to=self
 */
 var _moved, _bbox_left_new, _bbox_top_new, _bbox_right_new, _bbox_bottom_new;
-var _x_new, _y_new, _sprite_new, _xscale_new, _yscale_new, _distance, xx, _carry, y_carry;
+var _x_new, _y_new, _image, _sprite_new, _xscale_new, _yscale_new, _distance, xx, _carry, y_carry;
 
 _moved =
     bbox_left != bbox_left_old ||
@@ -71,6 +71,7 @@ if _moved {
         }
     }
 
+    _image = image_index;
     sprite_index = spr1x1;
     x = bbox_left_old;
     y = bbox_top_old;
@@ -130,6 +131,7 @@ if _moved {
     x = _x_new;
     y = _y_new;
     sprite_index = _sprite_new;
+    image_index = _image;
     image_xscale = _xscale_new;
     image_yscale = _yscale_new;
 }
