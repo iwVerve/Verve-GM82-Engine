@@ -389,6 +389,12 @@ applies_to=self
 */
 if !is_in_game() {
     instance_destroy();
+    exit;
+}
+
+if global.save_autosave {
+    save_save();
+    global.save_autosave = false;
 }
 #define Draw_0
 /*"/*'/**//* YYD ACTION

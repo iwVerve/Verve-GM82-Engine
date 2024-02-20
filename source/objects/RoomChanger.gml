@@ -80,6 +80,6 @@ if room_exists(room_to) {
     room_goto(room_to);
 
     if autosave {
-        save_save_asap();
+        save_save_asap(true);
     }
 }
