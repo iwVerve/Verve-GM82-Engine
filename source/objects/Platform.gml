@@ -7,7 +7,7 @@ applies_to=self
 snap = true;
 bounce = true;
 
-platform_floor_prev = 0;
+platform_floor_prev = ternary(global.grav == 1, bbox_top, bbox_bottom);
 #define Step_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

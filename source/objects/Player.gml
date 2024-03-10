@@ -22,7 +22,7 @@ x_scale = 1;
 has_bow = (save_get("difficulty") == 0);
 on_floor = false;
 vine_direction = false;
-feet_y_prev = 0;
+feet_y_prev = ternary(global.grav == 1, bbox_bottom, bbox_top);
 
 if global.save_autosave {
     save_save();
