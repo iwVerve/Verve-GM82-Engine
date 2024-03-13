@@ -267,6 +267,10 @@ var _above_platform_prev, _on_or_below_platform_now, _landed_on_platform;
 var _below_platform_prev, _on_or_above_platform_now, _jumped_out;
 
 with(Platform) {
+    if is_undefined(platform_floor_prev) {
+        continue;
+    }
+
     if other.bbox_right < bbox_left || other.bbox_left > bbox_right {
         continue;
     }
