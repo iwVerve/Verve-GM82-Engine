@@ -333,7 +333,7 @@ if place_meeting(x, y, PlayerKiller) {
     player_kill();
 }
 
-if global.killer_room_border if bbox_right < 0 || bbox_left >= room_width || bbox_bottom < 0 || bbox_top >= room_height {
+if bbox_right < 0 || bbox_left >= room_width || bbox_bottom < 0 || bbox_top >= room_height {
     _warp = noone;
     with(RoomChanger) {
         if type == type_outside || type == type_wrap_around if place_meeting(x, y, Player) {
@@ -346,7 +346,7 @@ if global.killer_room_border if bbox_right < 0 || bbox_left >= room_width || bbo
             event_user(0);
         }
     }
-    else {
+    else if global.killer_room_border {
         player_kill();
     }
 }
