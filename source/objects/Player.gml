@@ -265,9 +265,11 @@ var yy, _dir, _feet_y, _feet_y_prev, _platform_floor, _platform_floor_prev;
 var _upwards_platform_vspeed, _downwards_platform_vspeed;
 var _above_platform_prev, _on_or_below_platform_now, _landed_on_platform;
 var _below_platform_prev, _on_or_above_platform_now, _jumped_out;
+var _is_forcefully_pushed, _can_freely_snap;
 
 with(Platform) {
     if is_undefined(platform_floor_prev) {
+        // Platform didn't exist one frame ago
         continue;
     }
 
@@ -290,24 +292,25 @@ with(Platform) {
     _jumped_out = _below_platform_prev && _on_or_above_platform_now;
 
     if _landed_on_platform || (_jumped_out && snap) {
+        // Try to snap to platform
         with(other) {
             // Target y position to snap to
             yy = floor(_platform_floor + round(y) - _feet_y - global.grav);
 
-            if global.strong_platforms && _landed_on_platform {
+            _is_forcefully_pushed = global.strong_platforms && _landed_on_platform;
+            _can_freely_snap = place_free(x, yy);
+            
+            if _is_forcefully_pushed || _can_freely_snap {
+                // Snap to platform
                 y = yy;
                 player_land();
             }
             else {
-                if place_free(x, yy) {
-                    y = yy;
-                    player_land();
-                }
-                else {
-                    _dir = 90 + 180 * (yy > y);
-                    move_contact_solid(_dir, abs(yy - y));
-                }
+                // Block in the way, move against it
+                _dir = 90 + 180 * (yy > y);
+                move_contact_solid(_dir, abs(yy - y));
             }
+            
             if other.hspeed != 0 {
                 if !place_free(x + other.hspeed, y) {
                     move_contact_solid(180 * (other.hspeed < 0), abs(other.hspeed));
