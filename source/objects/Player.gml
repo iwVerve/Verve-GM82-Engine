@@ -419,7 +419,7 @@ if global.debug_god_mode {
     _draw_alpha *= 0.75;
 }
 if global.debug_infinite_jump {
-    _draw_color = color_blend(_draw_color, c_blue);
+    _draw_color = color_blend(_draw_color, c_aqua);
 }
 if global.debug_show_mask {
     _draw_sprite = mask_index;
