@@ -4,6 +4,7 @@
 
 instance_activate_all();
 sound_stop_all();
+music_stop();
 global.paused = false;
 save_write();
 
