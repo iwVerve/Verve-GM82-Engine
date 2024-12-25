@@ -9,8 +9,9 @@ switch(room) {
         return "guy_rock";
 
     case rSampleBoss:
-        return "megaman";
+        // objSampleBoss starts the room music. We don't want it stopped here.
+        return music_no_change;
 
     default:
-        return "";
+        return music_none;
 }

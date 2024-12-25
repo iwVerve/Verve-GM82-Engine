@@ -18,6 +18,8 @@ fast_shot_delay = 72;
 
 alarm[0] = slow_shot_delay;
 alarm[1] = fast_shot_delay;
+
+music_play("megaman", true);
 #define Alarm_0
 /*"/*'/**//* YYD ACTION
 lib_id=1

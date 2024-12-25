@@ -32,3 +32,5 @@ ease_elastic_inout=12
 ease_bounce_in=13
 ease_bounce_out=14
 ease_bounce_inout=15
+music_none="__music_none"
+music_no_change="__music_no_change"
