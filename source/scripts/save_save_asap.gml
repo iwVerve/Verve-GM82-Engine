@@ -18,7 +18,7 @@ if argument_count > 0 {
     _not_immediate = argument[0];
 }
 
-if instance_exists(Player) if !_not_immediate {
+if instance_exists(Player) && !_not_immediate {
     save_save();
 }
 else {
