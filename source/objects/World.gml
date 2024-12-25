@@ -78,7 +78,7 @@ applies_to=self
 /// Draw debug overlay
 var _text, _player_x, _player_y, _player_align;
 
-if is_in_game && global.debug_overlay > 0 {
+if is_in_game() && global.debug_overlay > 0 {
     _text = "";
 
     _player_x = "-";
