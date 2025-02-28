@@ -20,7 +20,7 @@ if !global.paused {
         surface_reset_target();
 
         instance_deactivate_all(true);
-        instance_activate_object(core);
+        instance_activate_object(gm82core_object);
         instance_activate_object(__gm82dx9_controller);
 
         global.paused = true;
