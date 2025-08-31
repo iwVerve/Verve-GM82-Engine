@@ -1,5 +1,5 @@
 Game Maker 8.2 Core
 Game Maker 8.2 DirectX9
-Game Maker 8.2 Live Room
 Game Maker 8.2 Network
 Game Maker 8.2 Sound
+Game Maker 8.2 Test

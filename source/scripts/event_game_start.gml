@@ -32,8 +32,8 @@ unmuted_music_volume = config_get("music_volume");
 set_room_views();
 
 if global.debug {
-    liveroom_start();
-    liveroom_add_obj_exclusion(PlayerStart);
+    test_room_start();
+    test_room_exclude_object(PlayerStart);
 }
 
 if !show_volume_check {
