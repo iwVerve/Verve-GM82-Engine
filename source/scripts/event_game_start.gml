@@ -3,7 +3,12 @@
 // The main initialization script.
 // Called from the World object.
 
-var _object;
+var i;
+
+// Safety padding to prevent old saves crashing after reducing the number of difficulties.
+for (i = 0; i < 100; i += 1) {
+    global.difficulty_names[i] = "";
+}
 
 engine_settings();
 
