@@ -3,7 +3,7 @@
 if !global.trigger_making {
     switch argument[0] {
         case "init":
-            execute_string(string_string);
+            with (inst) execute_string(other.string_string);
             break;
     }
 }
