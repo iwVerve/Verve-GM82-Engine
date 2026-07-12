@@ -104,6 +104,6 @@ switch(argument1) {
         if v < 0.5 {
             return (1 - ease_value(1 - 2 * v, ease_bounce_out)) / 2;
         }
-        return (1 + ease_value(2 * v - 1)) / 2;
+        return (1 + ease_value(2 * v - 1, ease_bounce_out)) / 2;
 
 }
