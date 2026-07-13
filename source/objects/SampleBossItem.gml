@@ -16,7 +16,7 @@ applies_to=self
 */
 event_inherited();
 
-with(objSampleBossWarp) {
+with(SampleBossWarp) {
     visible = true;
     mask_index = -1;
 }

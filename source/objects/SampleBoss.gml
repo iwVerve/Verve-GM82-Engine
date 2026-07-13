@@ -27,7 +27,7 @@ action_id=603
 applies_to=self
 */
 if instance_exists(Player) {
-    with(instance_create(x, y, objSampleBossCherry)) {
+    with(instance_create(x, y, SampleBossCherry)) {
         move_towards_point(Player.x, Player.y, 5);
     }
 
@@ -40,7 +40,7 @@ action_id=603
 applies_to=self
 */
 if instance_exists(Player) {
-    with(instance_create(x, y, objSampleBossCherry)) {
+    with(instance_create(x, y, SampleBossCherry)) {
         move_towards_point(Player.x, Player.y, 8);
     }
 
@@ -68,7 +68,7 @@ hp -= 1;
 if hp <= 0 {
     sound_play("player_death");
     instance_destroy();
-    with(objSampleBossItem) {
+    with(SampleBossItem) {
         visible = true;
         mask_index = -1;
     }

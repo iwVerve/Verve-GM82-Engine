@@ -63,10 +63,10 @@ BlockMoving
 TileDisplay
 BlockFake
 BlockInvisible
-objSampleBoss
-objSampleBossCherry
-objSampleBossItem
-objSampleBossWarp
+SampleBoss
+SampleBossCherry
+SampleBossItem
+SampleBossWarp
 ButtonLeft
 ButtonRight
 SampleStretchingBlock
